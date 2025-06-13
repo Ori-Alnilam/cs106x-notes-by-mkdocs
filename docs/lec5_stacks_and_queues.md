@@ -1,11 +1,11 @@
 # Lec5_Stacks_and_Queues
-> 💻lec5练习题：
-> #### stack
-> - [x] [1. stackMystery1](https://www.codestepbystep.com/problem/view/cpp/collections/stackqueue/stackMystery1)
-> - [x] [2. checkBalance](https://www.codestepbystep.com/problem/view/cpp/collections/stackqueue/checkBalance)
-> #### queue
-> - [x] [3. stutter](https://www.codestepbystep.com/problem/view/cpp/collections/stackqueue/stutter)
-> - [x] [4. mirror](https://www.codestepbystep.com/problem/view/cpp/collections/stackqueue/mirror) 练习queue的`push, pop, front`
+💻lec5练习题：
+#### stack
+- [x] [1. stackMystery1](https://www.codestepbystep.com/problem/view/cpp/collections/stackqueue/stackMystery1)
+- [x] [2. checkBalance](https://www.codestepbystep.com/problem/view/cpp/collections/stackqueue/checkBalance)
+#### queue
+- [x] [3. stutter](https://www.codestepbystep.com/problem/view/cpp/collections/stackqueue/stutter)
+- [x] [4. mirror](https://www.codestepbystep.com/problem/view/cpp/collections/stackqueue/mirror) 练习queue的`push, pop, front`
 
 - `#include "linkedlist.h"`
 - [SPL LinkedList](http://www.martinstepp.com/cppdoc/LinkedList-class.html)

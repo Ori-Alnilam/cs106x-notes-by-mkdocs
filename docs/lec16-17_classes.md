@@ -1,10 +1,10 @@
 # Lec16-17_Classes
-> 💻课后练习：
-> 
-> - [x] [1. Circle](https://www.codestepbystep.com/problem/view/cpp/classes/Circle)
-> 	- 头文件和实现文件分开写当然好，但这种答题都是放在一起的，别写习惯了搞忘了:0
-> - [x] [2. Date](https://www.codestepbystep.com/problem/view/cpp/classes/Date)
-> 	- 用到了我讨厌的ostringstream :(
+💻课后练习：
+
+- [x] [1. Circle](https://www.codestepbystep.com/problem/view/cpp/classes/Circle)
+	- 头文件和实现文件分开写当然好，但这种答题都是放在一起的，别写习惯了搞忘了:0
+- [x] [2. Date](https://www.codestepbystep.com/problem/view/cpp/classes/Date)
+	- 用到了我讨厌的ostringstream :(
 
 
 - 在C++中编写类，包含`.h`与`.cpp`两个文件
@@ -147,7 +147,7 @@ int main() {
 
 ## const
 ![lec16-3](images/lec16-3.png)
-声明了const的成员函数，表示函数不能修改对象的字段（类中的成员函数才把const放在最后，如果是全局函数不需要）
+声明了 const 的成员函数，表示函数不能修改对象的字段（类中的成员函数才把 const 放在最后，如果是全局函数不需要）
 
 ## 操作符重载
 ![lec16-4](images/lec16-4.png)

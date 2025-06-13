@@ -1,16 +1,16 @@
 # Lec4_Vector
-> 💻lec4练习题：
-> 
-> - [x] [1. vectorMysteryRemove](https://www.codestepbystep.com/problem/view/cpp/collections/vector/vectorMysteryRemove)
-> - [x] [2. vectorMysteryInsert](https://www.codestepbystep.com/problem/view/cpp/collections/vector/vectorMysteryInsert)
-> - [x] [3. countInRange](https://www.codestepbystep.com/problem/view/cpp/collections/vector/countInRange)
-> - 前三题好无聊
-> - [x] [4. removeAll](https://www.codestepbystep.com/problem/view/cpp/collections/vector/removeAll)注意删除元素要从后开始遍历vector
-> - [x] [5. addStars](https://www.codestepbystep.com/problem/view/cpp/collections/vector/addStars)
-> - [x] [6. intersect](https://www.codestepbystep.com/problem/view/cpp/collections/vector/intersect)双指针(索引)
+💻lec4练习题：
+
+- [x] [1. vectorMysteryRemove](https://www.codestepbystep.com/problem/view/cpp/collections/vector/vectorMysteryRemove)
+- [x] [2. vectorMysteryInsert](https://www.codestepbystep.com/problem/view/cpp/collections/vector/vectorMysteryInsert)
+- [x] [3. countInRange](https://www.codestepbystep.com/problem/view/cpp/collections/vector/countInRange)
+- 前三题好无聊
+- [x] [4. removeAll](https://www.codestepbystep.com/problem/view/cpp/collections/vector/removeAll)注意删除元素要从后开始遍历vector
+- [x] [5. addStars](https://www.codestepbystep.com/problem/view/cpp/collections/vector/addStars)
+- [x] [6. intersect](https://www.codestepbystep.com/problem/view/cpp/collections/vector/intersect)双指针(索引)
 
 #### 练习题5：addStars
-> 练习reserve()、swap()
+练习reserve()、swap()
 ```cpp
 void addStars(vector<string>& v) {
     int size = v.size() * 2 + 1;

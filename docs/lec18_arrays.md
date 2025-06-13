@@ -1,5 +1,5 @@
 # Lec18_Arrays
-> 能自己写出整个ArrayStack类实现这讲就算结束
+能自己写出整个ArrayStack类实现这讲就算结束
 
 声明数组：
 ```cpp
@@ -10,8 +10,7 @@ int* a = new int[3];
 int* a2 = new int[3]();
 ```
 
-> [!note]
-> vector内部实现：int size + int capacity + array
+vector内部实现：int size + int capacity + array
 
 
 ## 实现ArrayStack类
@@ -118,8 +117,10 @@ ostream& operator <<(ostream& out, const ArrayStack& stack) {
 
 ## 浅拷贝问题
 ![lec18-1](images/lec18-1.png)
+
 - copy constructor
-- = operator overload
+- `=` operator overload
+
 ```cpp
 ...
 private:
@@ -129,7 +130,7 @@ private:
 
 
 ## template
-> 讲座没时间讲，看18年的PPT
+讲座没时间讲，看18年的PPT
 
 ---
 

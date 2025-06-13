@@ -1,6 +1,6 @@
 # Lec10-12_exhaustive_search
 ## lec10穷举搜索exhaustive_search
-> 原来我前面写的那些题用到的是**穷举搜索**的知识，到这里才学啊~作业写早了喵
+原来我前面写的那些题用到的是**穷举搜索**的知识，到这里才学啊~作业写早了喵
 
 ### 课堂练习1：printBinary
 ```cpp
@@ -16,24 +16,24 @@ void printBinary(int n, string prefix = "") {
 }
 ```
 
-> 不知道为什么本地没有`resursion.h`，可以去CodeStepByStep上写[这题](https://www.codestepbystep.com/problem/view/cpp/backtracking/printAllBinary)，用`recursionIndent`查看递归调用的情况：
+不知道为什么本地没有`resursion.h`，可以去 CodeStepByStep 上写[这题](https://www.codestepbystep.com/problem/view/cpp/backtracking/printAllBinary)，用`recursionIndent`查看递归调用的情况：
 
-> [!success]+ recursionIndent
-> 斯坦福库里的递归关系可视化函数
-> ```cpp
-> void printAllBinary(int n, string prefix = "") {
->     cout << recursionIndent()
->          << "n = " << n
->          << ", prefix = " << prefix << endl;
->     if (n <= 0) {
->         cout << prefix << endl;
->         return;
->     }
-> 
->     printAllBinary(n - 1, prefix + "0");
->     printAllBinary(n - 1, prefix + "1");
-> }
-> ```
+!!! success "recursionIndent"
+    斯坦福库里的递归关系可视化函数
+    ```cpp
+    void printAllBinary(int n, string prefix = "") {
+        cout << recursionIndent()
+            << "n = " << n
+            << ", prefix = " << prefix << endl;
+        if (n <= 0) {
+            cout << prefix << endl;
+            return;
+        }
+
+        printAllBinary(n - 1, prefix + "0");
+        printAllBinary(n - 1, prefix + "1");
+    }
+    ```
 
 ### 课堂练习2：printDecimal
 [printDecimal](https://www.codestepbystep.com/problem/view/cpp/backtracking/printAllDecimal)
@@ -52,7 +52,7 @@ void printDecimal(int n, string soFar = "") {
 ```
 
 ### 课堂练习3：permute
-> **permutation排列**
+**permutation排列**
 
 [permute](https://www.codestepbystep.com/problem/view/cpp/backtracking/permute)
 
@@ -71,7 +71,7 @@ void permute(string s, string prefix = "") {
 }
 ```
 
-- [!] 如果想把permute的结果存入Vector：
+💡 如果想把permute的结果存入Vector：
 
 ```cpp
 void permute(string s, Vector<string>& v, string prefix = "");
@@ -95,7 +95,7 @@ void permute(string s, Vector<string>& v, string prefix) {
 }
 ```
 
-- [!] 如果想让permute返回一个Vector：
+💡 如果想让permute返回一个Vector：
 
 ```cpp
 Vector<string> permute(string s);
@@ -127,9 +127,9 @@ void permuteHelper(string s, Vector<string>& v, string prefix) {
 ```
 
 ### 课堂练习4：combin
-> [combin](https://www.codestepbystep.com/problem/view/cpp/backtracking/combin)
-> 
-> permute的变体，保证得到的字符串是唯一没有重复的（字符可以重复，比如可以有`AAB`，但不能有两个相同的字符串~~{AAB, AAB}~~
+[combin](https://www.codestepbystep.com/problem/view/cpp/backtracking/combin)
+
+permute 的变体，保证得到的字符串是唯一没有重复的（字符可以重复，比如可以有`AAB`，但不能有两个相同的字符串 ~~{AAB, AAB}~~
 
 ```cpp
 void combin(string s, string prefix = "") {
@@ -158,8 +158,9 @@ void combin(string s, string prefix = "") {
 	（不能在非`const`左值引用`Vector<int>`时，传入右值参数`{}`）
 
 ### Problem Six: Eating a Chocolate Bar
-> [CS106B_Section 2](https://web.stanford.edu/class/cs106b/section/section2/#recursion)
-> 这题是lec10、lec11的知识点：穷尽搜索和回溯法
+[CS106B_Section 2](https://web.stanford.edu/class/cs106b/section/section2/#recursion)
+
+这题是lec10、lec11的知识点：穷尽搜索和回溯法
 #### 1. 返回方法数`int`
 ```cpp
 int numWaysToEat(int numSquares) {
@@ -223,8 +224,8 @@ void printWaysToEat(int numSquares) {
 }
 ```
 
-- [!] 每次递归调用时，`soFar + 1` 和 `soFar + 2` 这种操作，会生成新的 `Vector<int>` 对象，而不会改变原始的 `soFar` 对象。这就保证了在递归调用返回之后，原始状态不会受到影响，也就无需进行 “回退” 操作。
-- [!] 当然也可以用回溯法直接在同一个`Vector<int>`对象上修改啦！
+- 每次递归调用时，`soFar + 1` 和 `soFar + 2` 这种操作，会生成新的 `Vector<int>` 对象，而不会改变原始的 `soFar` 对象。这就保证了在递归调用返回之后，原始状态不会受到影响，也就无需进行 “回退” 操作。
+- 当然也可以用回溯法直接在同一个`Vector<int>`对象上修改啦！
 
 ##### 2.1 回溯法（用STL
 ```cpp
@@ -276,9 +277,9 @@ void printWaysToEat(int numSquares) {
 }
 ```
 
-> 因为斯坦福库里Vector类没有从末尾删除元素的函数，所以这里用的STL更方便一点
-> 
-> 事实上，因为没有SPL中的cout，导致输出vector的内容复杂了很多。。
+因为斯坦福库里 Vector 类没有从末尾删除元素的函数，所以这里用的 STL 更方便一点
+
+事实上，因为没有 SPL 中的 cout ，导致输出 vector 的内容复杂了很多。。
 
 ##### 2.2 回溯法（用SPL
 ```cpp
@@ -370,11 +371,11 @@ Set<Vector<int>> waysToEat(int numSquares) {
 
 ## lec11回溯法recursive backtracking
 ### 1. 初始回溯法：diceRolls
-> 作业链接：[diceRolls](https://www.codestepbystep.com/problem/view/cpp/backtracking/diceRolls)
-> 
-> 作业描述：投掷n枚骰子🎲，打印出所有可能的结果。变量dice代表🎲数量
-> 
-> 作业备注：每一个骰子都有6种可能的点数（这也需要备注吗
+作业链接：[diceRolls](https://www.codestepbystep.com/problem/view/cpp/backtracking/diceRolls)
+
+作业描述：投掷n枚骰子🎲，打印出所有可能的结果。变量dice代表🎲数量
+
+作业备注：每一个骰子都有6种可能的点数（这也需要备注吗
 #### 1.1 前面所学的解法：
 ```cpp
 void diceRollsHelper(int dice, const Vector<int>& soFar) {
@@ -420,11 +421,11 @@ void diceRolls(int dice) {
 ```
 
 ### 2. 剪枝diceSum
-> 🔗[diceSum](https://www.codestepbystep.com/problem/view/cpp/backtracking/diceSum)
-> 
-> 🔍上面我们得出的是掷2枚🎲的所有可能情况。
-> 
-> 💡现在加一点限制：求掷2枚🎲，且和为7的所有情况
+🔗[diceSum](https://www.codestepbystep.com/problem/view/cpp/backtracking/diceSum)
+
+🔍上面我们得出的是掷2枚🎲的所有可能情况。
+
+💡现在加一点限制：求掷2枚🎲，且和为7的所有情况
 
 ```cpp
 void diceSumHelper(int dice, int sum, Vector<int>& soFar, int currentSum) {
@@ -459,9 +460,9 @@ void diceSum(int dice, int sum) {
 ```
 
 ### 3. 子集sublists
-> 🔗[printSubVectors](https://www.codestepbystep.com/problem/view/cpp/backtracking/printSubVectors)
-> 
-> 🔍对于集合中的每个元素，有包含在子集中和不包含在子集中两种可能
+🔗[printSubVectors](https://www.codestepbystep.com/problem/view/cpp/backtracking/printSubVectors)
+
+🔍对于集合中的每个元素，有包含在子集中和不包含在子集中两种可能
 #### 3.1 用写Assignment 3的方法
 ```cpp
 void sublistsHelper(Vector<string>& v, Vector<string>& chosen) {
@@ -518,17 +519,18 @@ void sublistsHelper(Vector<string>& v, Vector<string>& chosen) {
 }
 ```
 
-> STL写法：
-> 
-> 1. `vector<string> remaining(v.bigin() + 1, v.end());`
-> 2. `chosen.push_back(first)` && `chosen.pop_back()`
-> 3. `v.erase(v.begin())` && `v.insert(v.begin(), first)`
+STL写法：
+
+1. `vector<string> remaining(v.bigin() + 1, v.end());`
+2. `chosen.push_back(first)` && `chosen.pop_back()`
+3. `v.erase(v.begin())` && `v.insert(v.begin(), first)`
 
 ---
 
 ## lec12回溯法 8 queens
-> 💻课堂练习：
-> - [x] [travel](https://www.codestepbystep.com/problem/view/cpp/recursion/travel)
+💻课堂练习：
+
+- [x] [travel](https://www.codestepbystep.com/problem/view/cpp/recursion/travel)
 
 ```cpp
 bool solveQueensHelper(Board& board, int col) {

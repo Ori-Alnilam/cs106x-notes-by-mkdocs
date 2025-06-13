@@ -1,18 +1,18 @@
 # Lec13-15_Linked_Lists
-> 💻课后练习：
-> #### Lec13：
-> - [x] [1. v1v2p1p2](https://www.codestepbystep.com/problem/view/cpp/pointers/v1v2p1p2)
-> - [x] [2. parameterMystery1](https://www.codestepbystep.com/problem/view/cpp/pointers/parameterMystery1)
-> #### Lec14
-> - [x] [1. min](https://www.codestepbystep.com/problem/view/cpp/collectionimpl/linkedlistptr/min)
-> - [x] [2. countDuplicates](https://www.codestepbystep.com/problem/view/cpp/collectionimpl/linkedlistptr/countDuplicates)
+💻课后练习：
+#### Lec13：
+- [x] [1. v1v2p1p2](https://www.codestepbystep.com/problem/view/cpp/pointers/v1v2p1p2)
+- [x] [2. parameterMystery1](https://www.codestepbystep.com/problem/view/cpp/pointers/parameterMystery1)
+#### Lec14
+- [x] [1. min](https://www.codestepbystep.com/problem/view/cpp/collectionimpl/linkedlistptr/min)
+- [x] [2. countDuplicates](https://www.codestepbystep.com/problem/view/cpp/collectionimpl/linkedlistptr/countDuplicates)
 
 Lec13指针的内容都是已经会的，没有新东西；Lec14在讲座结束的时候提到了：
 ```cpp
 void add(ListNode*& first, int n) {...}
 ```
-这个`&`在C里面是没有的（吧）。应该是因为当链表为空时，if语句里修改了作为参数传入的指针的指向，所以要**按引用传递**（我猜）。相应的，在C里面如果也要修改传入的指针参数，应该是`ListNode** first`这样？（忘了）
-> 看完Lec15后的解答：yesyes, 就是你想的那样。在C里面我们还需要用二级指针，C++只需加上`&`就可以了。以及C学过的，这就忘了（鄙夷
+这个`&`在 C 里面是没有的（吧）。应该是因为当链表为空时， if 语句里修改了作为参数传入的指针的指向，所以要 **按引用传递** （我猜）。相应的，在C里面如果也要修改传入的指针参数，应该是`ListNode** first`这样？（忘了）
+看完 Lec15 后的解答： yesyes , 就是你想的那样。在 C 里面我们还需要用二级指针， C++ 只需加上`&`就可以了。以及 C 学过的，这就忘了（鄙夷
 
 #### 定义链表节点
 ```cpp
@@ -141,11 +141,10 @@ void removeFirst(ListNode*& first) {
 }
 ```
 
-> [!note]
-> #### delete
-> 在C++中，如果一块内存没有指针指向，这块内存在程序运行结束前都无法再使用（C++不会回收），造成内存泄漏。所以需要手动`delete`管理内存。`delete trash`会删除指针指向的那块在**堆**上的内存，而指针本身存储在函数的局部变量**栈**上，栈上的内存会在函数返回时被清理掉。
-> 
-> 记得在Java里删除链表头节点只需一行`first = first.next`就可以了，因为像Java、Python、C#、JavaScript、Ruby等都会自动管理内存，没有指针指向的内存块会自动被回收。
+!!! note "delete"
+	在C++中，如果一块内存没有指针指向，这块内存在程序运行结束前都无法再使用（C++不会回收），造成内存泄漏。所以需要手动`delete`管理内存。`delete trash`会删除指针指向的那块在**堆**上的内存，而指针本身存储在函数的局部变量**栈**上，栈上的内存会在函数返回时被清理掉。
+
+	记得在Java里删除链表头节点只需一行`first = first.next`就可以了，因为像Java、Python、C#、JavaScript、Ruby等都会自动管理内存，没有指针指向的内存块会自动被回收。
 
 #### remove()
 ```cpp
@@ -187,7 +186,7 @@ void insert(ListNode*& first, int index, int value) {
 ```
 
 ## 实现LinkedIntList类
-> 学完Lec16-17后实现链表类
+学完Lec16-17后实现链表类
 
 #### 头文件
 1. **ListNode.h**

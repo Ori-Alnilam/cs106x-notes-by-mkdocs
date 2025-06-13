@@ -1,21 +1,22 @@
 # Lec19-21_Trees
-> - Lec19 二叉树
-> - Lec20 二叉搜索树
-> - Lec21 Advanced Trees
-> 	- 平衡树
-> 		- ALV树
-> 		- 红黑树
-> 		- 伸展树
-> 	- 字典树Tries
-> 
-> 看视频效率太低了，也讲不了多少东西。以后直接看PPT，不懂的地方问GPT
-> 1. print
-> 2. size
-> 3. contains
-> 4. getMin
-> 5. getMax
-> 6. add
-> 7. remove
+- Lec19 二叉树
+- Lec20 二叉搜索树
+- Lec21 Advanced Trees
+	- 平衡树
+		- ALV树
+		- 红黑树
+		- 伸展树
+	- 字典树Tries
+
+看视频效率太低了，也讲不了多少东西。以后直接看 PPT ，不懂的地方问 GPT
+
+1. print
+2. size
+3. contains
+4. getMin
+5. getMax
+6. add
+7. remove
 
 ```cpp
 struct TreeNode {
@@ -31,25 +32,25 @@ struct TreeNode {
 }
 ```
 
-> [!note]
-> 可以在构造函数添加*成员初始化列表*：
-> ```cpp
-> TreeNode(int d = 0, TreeNode* l = nullptr, TreeNode* r = nullptr)
-> 	: data(d), left(l), right(r) {}
-> ```
-> 也可以分开写多个构造函数，可读性更好：
-> ```cpp
-> // 无参数
-> TreeNode() : data(0), left(nullptr), right(nullptr) {}
-> // 一个参数的构造函数
-> TreeNode(int d) : data(d), left(nullptr), right(nullptr) {}
-> // 三个参数
-> TreeNode(int d, TreeNode* l, TreeNode* r) 
-> 	: data(d), left(l), right(r) {}
-> ```
+!!! note
+	可以在构造函数添加*成员初始化列表*：
+	```cpp
+	TreeNode(int d = 0, TreeNode* l = nullptr, TreeNode* r = nullptr)
+		: data(d), left(l), right(r) {}
+	```
+	也可以分开写多个构造函数，可读性更好：
+	```cpp
+	// 无参数
+	TreeNode() : data(0), left(nullptr), right(nullptr) {}
+	// 一个参数的构造函数
+	TreeNode(int d) : data(d), left(nullptr), right(nullptr) {}
+	// 三个参数
+	TreeNode(int d, TreeNode* l, TreeNode* r) 
+		: data(d), left(l), right(r) {}
+	```
 
 #### 1. print
-> 前、中、后序遍历
+前、中、后序遍历
 ```cpp
 void print(TreeNode* node) {
 	if (node != nullptr) {
@@ -89,13 +90,15 @@ bool contains(TreeNode* node, int value) {
 }
 ```
 
-> 进一步，当是**二叉搜索树**时
-> - BSTs
-> 	1. 遍历Traversing
-> 		- contains
-> 		- getMin/getMax
-> 	2. 添加Adding
-> 	3. 删除Removing 
+进一步，当是**二叉搜索树**时
+
+BSTs
+
+1. 遍历 Traversing
+	- contains
+	- getMin/getMax
+2. 添加 Adding
+3. 删除 Removing 
 
 ```cpp
 bool contains(TreeNode* node, int value) {
@@ -160,8 +163,7 @@ void add(TreeNode*& node, int value) {
 }
 ```
 
-> [!important]
-> 注意按引用传递。
+注意按引用传递。
 
 #### remove
 ```cpp
@@ -204,7 +206,7 @@ void remove(TreeNode*& node, int value) {
 
 ## Tries
 #### containsPrefix
-> 字典树
+字典树
 
 ```cpp
 bool containsPrefix(TreeNode* node, string prefix) {

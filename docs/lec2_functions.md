@@ -1,20 +1,20 @@
 # Lec2_functions
-> lec2课堂练习：
-> 
-> - [x] [parameterMysteryBCA](https://www.codestepbystep.com/problem/view/cpp/parameters/parameterMysteryBCA)
-> - [x] [xkcdDatingRange](https://www.codestepbystep.com/problem/view/cpp/parameters/xkcdDatingRange)
-> - [x] [quadratic](https://www.codestepbystep.com/problem/view/cpp/parameters/quadratic)
-> - [x] [returnMystery1](https://www.codestepbystep.com/problem/view/cpp/parameters/returnMystery1)
-> - [x] [BMI](https://www.codestepbystep.com/problem/view/cpp/parameters/BMI)
-> - [x] [stringMysteryAB](https://www.codestepbystep.com/problem/view/cpp/strings/stringMysteryAB)
-> - [x] [nameDiamond](https://www.codestepbystep.com/problem/view/cpp/strings/nameDiamond)
+lec2课堂练习：
+
+- [x] [parameterMysteryBCA](https://www.codestepbystep.com/problem/view/cpp/parameters/parameterMysteryBCA)
+- [x] [xkcdDatingRange](https://www.codestepbystep.com/problem/view/cpp/parameters/xkcdDatingRange)
+- [x] [quadratic](https://www.codestepbystep.com/problem/view/cpp/parameters/quadratic)
+- [x] [returnMystery1](https://www.codestepbystep.com/problem/view/cpp/parameters/returnMystery1)
+- [x] [BMI](https://www.codestepbystep.com/problem/view/cpp/parameters/BMI)
+- [x] [stringMysteryAB](https://www.codestepbystep.com/problem/view/cpp/strings/stringMysteryAB)
+- [x] [nameDiamond](https://www.codestepbystep.com/problem/view/cpp/strings/nameDiamond)
 
 #### 课堂内容
 
 !!! important
 	### 按引用传递
 	#### 1. 非const左值引用（Type&）：`void func(int& a) {...}`
-	非 `const` 引用只能绑定到左值（lvalue），不能绑定到右值（rvalue）。左值是指有明确存储地址、可以取地址的表达式，通常是**变量**；右值是指临时对象、**字面量**等，没有明确的存储地址，不能取地址。
+	非 `const` 引用只能绑定到左值（ lvalue ），不能绑定到右值（ rvalue ）。左值是指有明确存储地址、可以取地址的表达式，通常是 **变量** ；右值是指临时对象、 **字面量** 等，没有明确的存储地址，不能取地址。
 	```cpp
 	void func(int& a) {...} // 此时调用`func(3)`是非法的。
 	```
@@ -36,7 +36,7 @@
 
 - cout
 - cin *// bad*
-- simpio.h *// 用 getInteger() 等函数代替cin*
+- simpio.h *// 用 getInteger() 等函数代替 cin*
 - console.h *// 将控制台作为独立窗口弹出*
 - 系统库用尖括号`#include <iostream>`，本地库用引号`#include "simpio.h"`
 - 有默认值的函数参数 >> 必须在参数列表末尾

@@ -1,8 +1,8 @@
 # Lec3_Strings
-> 💻lec3课堂练习：
->
-> - [x] [1. streamErrors](https://www.codestepbystep.com/problem/view/cpp/streams/streamErrors)
-> 不喜欢写文件流的题，不写了
+💻lec3课堂练习：
+
+- [x] [1. streamErrors](https://www.codestepbystep.com/problem/view/cpp/streams/streamErrors)
+不喜欢写文件流的题，不写了
 ### string
 - `#include <string>`
 - `using namespace std; // std::string`
