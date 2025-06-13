@@ -51,6 +51,8 @@ markdown_extensions:
   - footnotes
   - pymdownx.caret        # 下划线 ^text^
   - pymdownx.tilde        # 删除线 ~~text~~
+  - pymdownx.arithmatex:
+      generic: true
 
 nav:
   - 首页: index.md
@@ -81,4 +83,8 @@ nav:
 
 extra_css:
   - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
 
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

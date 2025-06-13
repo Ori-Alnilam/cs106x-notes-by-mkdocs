@@ -1,11 +1,11 @@
 # Lec28_Sorting
-> [!note]
-> - bogo sort
-> - [selection sort](#Selection_sort)
-> - [insertion sort](#Insertion_sort)
-> - [merge sort](#Merge_sort)
-> - TimSort
-> - [quick sort](#Quick_sort)
+!!! note
+    - bogo sort
+    - [selection sort](#Selection_sort)
+    - [insertion sort](#Insertion_sort)
+    - [merge sort](#Merge_sort)
+    - TimSort
+    - [quick sort](#Quick_sort)
 
 #### Selection_sort
 ```cpp
@@ -44,8 +44,7 @@ void insertionSort(vector<int>& v) {
 }
 ```
 
-> [!note]
-> 选择排序和插入排序的时间复杂度都是$O(N^2)$
+选择排序和插入排序的时间复杂度都是$O(N^2)$
 
 #### Merge_sort
 ```cpp
@@ -149,10 +148,10 @@ void merge(vector<int>& v, vector<int>& tmp, int left, int mid, int right) {
 
 #### Quick_sort
 
-> [!note]
-> 归并排序是稳定的排序算法，而快速排序不稳定。
-> 
-> 稳定性：相等元素的相对顺序在排序前后不变
+
+归并排序是稳定的排序算法，而快速排序不稳定。
+ 
+稳定性：相等元素的相对顺序在排序前后不变
 
 ---
 
