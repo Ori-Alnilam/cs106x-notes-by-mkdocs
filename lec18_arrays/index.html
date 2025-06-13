@@ -950,9 +950,7 @@
 
 
 <h1 id="lec18_arrays">Lec18_Arrays<a class="headerlink" href="#lec18_arrays" title="Permanent link">&para;</a></h1>
-<blockquote>
 <p>能自己写出整个ArrayStack类实现这讲就算结束</p>
-</blockquote>
 <p>声明数组：
 <div class="highlight"><pre><span></span><code><span class="n">type</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">type</span><span class="p">[</span><span class="n">length</span><span class="p">];</span><span class="w"> </span><span class="c1">// uninitialized</span>
 <span class="n">type</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">type</span><span class="p">[</span><span class="n">length</span><span class="p">]();</span><span class="w"> </span><span class="c1">// initialize to 0</span>
@@ -960,10 +958,7 @@
 <span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
 <span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">3</span><span class="p">]();</span>
 </code></pre></div></p>
-<blockquote>
-<p>[!note]
-vector内部实现：int size + int capacity + array</p>
-</blockquote>
+<p>vector内部实现：int size + int capacity + array</p>
 <h2 id="arraystack">实现ArrayStack类<a class="headerlink" href="#arraystack" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// arraystack.h</span>
 <span class="cp">#ifndef _arraystack_h</span>
@@ -1059,18 +1054,18 @@ vector内部实现：int size + int capacity + array</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// stack_client.cpp</span>
 </code></pre></div>
 <h2 id="_1">浅拷贝问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><img alt="lec18-1" src="../images/lec18-1.png" />
-- copy constructor
-- = operator overload
+<p><img alt="lec18-1" src="../images/lec18-1.png" /></p>
+<ul>
+<li>copy constructor</li>
+<li><code>=</code> operator overload</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="p">...</span>
 <span class="k">private</span><span class="o">:</span>
 <span class="w">    </span><span class="n">ArrayStack</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ArrayStack</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">);</span>
 <span class="w">    </span><span class="n">ArrayStack</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ArrayStack</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">);</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="template">template<a class="headerlink" href="#template" title="Permanent link">&para;</a></h2>
-<blockquote>
 <p>讲座没时间讲，看18年的PPT</p>
-</blockquote>
 <hr />
 
 

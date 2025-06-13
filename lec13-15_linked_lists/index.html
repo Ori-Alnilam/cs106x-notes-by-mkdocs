@@ -686,15 +686,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#delete" class="md-nav__link">
-    <span class="md-ellipsis">
-      delete
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#remove" class="md-nav__link">
     <span class="md-ellipsis">
       remove()
@@ -1121,15 +1112,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#delete" class="md-nav__link">
-    <span class="md-ellipsis">
-      delete
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#remove" class="md-nav__link">
     <span class="md-ellipsis">
       remove()
@@ -1214,7 +1196,6 @@
 
 
 <h1 id="lec13-15_linked_lists">Lec13-15_Linked_Lists<a class="headerlink" href="#lec13-15_linked_lists" title="Permanent link">&para;</a></h1>
-<blockquote>
 <p>💻课后练习：</p>
 <h4 id="lec13">Lec13：<a class="headerlink" href="#lec13" title="Permanent link">&para;</a></h4>
 <ul class="task-list">
@@ -1226,14 +1207,11 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/collectionimpl/linkedlistptr/min">1. min</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/collectionimpl/linkedlistptr/countDuplicates">2. countDuplicates</a></li>
 </ul>
-</blockquote>
 <p>Lec13指针的内容都是已经会的，没有新东西；Lec14在讲座结束的时候提到了：
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{...}</span>
 </code></pre></div>
-这个<code>&amp;</code>在C里面是没有的（吧）。应该是因为当链表为空时，if语句里修改了作为参数传入的指针的指向，所以要**按引用传递**（我猜）。相应的，在C里面如果也要修改传入的指针参数，应该是<code>ListNode** first</code>这样？（忘了）</p>
-<blockquote>
-<p>看完Lec15后的解答：yesyes, 就是你想的那样。在C里面我们还需要用二级指针，C++只需加上<code>&amp;</code>就可以了。以及C学过的，这就忘了（鄙夷</p>
-</blockquote>
+这个<code>&amp;</code>在 C 里面是没有的（吧）。应该是因为当链表为空时， if 语句里修改了作为参数传入的指针的指向，所以要 <strong>按引用传递</strong> （我猜）。相应的，在C里面如果也要修改传入的指针参数，应该是<code>ListNode** first</code>这样？（忘了）
+看完 Lec15 后的解答： yesyes , 就是你想的那样。在 C 里面我们还需要用二级指针， C++ 只需加上<code>&amp;</code>就可以了。以及 C 学过的，这就忘了（鄙夷</p>
 <h4 id="_1">定义链表节点<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">ListNode</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
@@ -1340,12 +1318,11 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>[!note]</p>
-<h4 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
+<p class="admonition-title">delete</p>
 <p>在C++中，如果一块内存没有指针指向，这块内存在程序运行结束前都无法再使用（C++不会回收），造成内存泄漏。所以需要手动<code>delete</code>管理内存。<code>delete trash</code>会删除指针指向的那块在**堆**上的内存，而指针本身存储在函数的局部变量**栈**上，栈上的内存会在函数返回时被清理掉。</p>
 <p>记得在Java里删除链表头节点只需一行<code>first = first.next</code>就可以了，因为像Java、Python、C#、JavaScript、Ruby等都会自动管理内存，没有指针指向的内存块会自动被回收。</p>
-</blockquote>
+</div>
 <h4 id="remove">remove()<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">remove</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">first</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1382,9 +1359,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="linkedintlist">实现LinkedIntList类<a class="headerlink" href="#linkedintlist" title="Permanent link">&para;</a></h2>
-<blockquote>
 <p>学完Lec16-17后实现链表类</p>
-</blockquote>
 <h4 id="_2">头文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ol>
 <li>

@@ -980,7 +980,6 @@
 
 
 <h1 id="lec2_functions">Lec2_functions<a class="headerlink" href="#lec2_functions" title="Permanent link">&para;</a></h1>
-<blockquote>
 <p>lec2课堂练习：</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/parameters/parameterMysteryBCA">parameterMysteryBCA</a></li>
@@ -991,13 +990,12 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/strings/stringMysteryAB">stringMysteryAB</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/strings/nameDiamond">nameDiamond</a></li>
 </ul>
-</blockquote>
 <h4 id="_1">课堂内容<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <h3 id="_2">按引用传递<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <h4 id="1-consttypevoid-funcint-a">1. 非const左值引用（Type&amp;）：<code>void func(int&amp; a) {...}</code><a class="headerlink" href="#1-consttypevoid-funcint-a" title="Permanent link">&para;</a></h4>
-<p>非 <code>const</code> 引用只能绑定到左值（lvalue），不能绑定到右值（rvalue）。左值是指有明确存储地址、可以取地址的表达式，通常是**变量**；右值是指临时对象、**字面量**等，没有明确的存储地址，不能取地址。
+<p>非 <code>const</code> 引用只能绑定到左值（ lvalue ），不能绑定到右值（ rvalue ）。左值是指有明确存储地址、可以取地址的表达式，通常是 <strong>变量</strong> ；右值是指临时对象、 <strong>字面量</strong> 等，没有明确的存储地址，不能取地址。
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{...}</span><span class="w"> </span><span class="c1">// 此时调用`func(3)`是非法的。</span>
 </code></pre></div></p>
 <p>因为非 <code>const</code> 左值引用意味着可以通过该引用修改所绑定的对象，而右值（字面量 <code>3</code>）是临时的，不允许被修改，所以非 <code>const</code> 左值引用不能绑定到右值。</p>
@@ -1011,7 +1009,7 @@
 <ul>
 <li>cout</li>
 <li>cin <em>// bad</em></li>
-<li>simpio.h <em>// 用 getInteger() 等函数代替cin</em></li>
+<li>simpio.h <em>// 用 getInteger() 等函数代替 cin</em></li>
 <li>console.h <em>// 将控制台作为独立窗口弹出</em></li>
 <li>系统库用尖括号<code>#include &lt;iostream&gt;</code>，本地库用引号<code>#include "simpio.h"</code></li>
 <li>有默认值的函数参数 &gt;&gt; 必须在参数列表末尾<ul>

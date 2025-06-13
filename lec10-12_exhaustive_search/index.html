@@ -1359,9 +1359,7 @@
 
 <h1 id="lec10-12_exhaustive_search">Lec10-12_exhaustive_search<a class="headerlink" href="#lec10-12_exhaustive_search" title="Permanent link">&para;</a></h1>
 <h2 id="lec10exhaustive_search">lec10穷举搜索exhaustive_search<a class="headerlink" href="#lec10exhaustive_search" title="Permanent link">&para;</a></h2>
-<blockquote>
 <p>原来我前面写的那些题用到的是**穷举搜索**的知识，到这里才学啊~作业写早了喵</p>
-</blockquote>
 <h3 id="1printbinary">课堂练习1：printBinary<a class="headerlink" href="#1printbinary" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// printBinary(3) --&gt; 000\n 001\n 010\n 011\n 100\n 101...</span>
 <span class="kt">void</span><span class="w"> </span><span class="n">printBinary</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1374,14 +1372,14 @@
 <span class="w">    </span><span class="n">printBinary</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>不知道为什么本地没有<code>resursion.h</code>，可以去CodeStepByStep上写<a href="https://www.codestepbystep.com/problem/view/cpp/backtracking/printAllBinary">这题</a>，用<code>recursionIndent</code>查看递归调用的情况：</p>
-<p>[!success]+ recursionIndent
-斯坦福库里的递归关系可视化函数
+<p>不知道为什么本地没有<code>resursion.h</code>，可以去 CodeStepByStep 上写<a href="https://www.codestepbystep.com/problem/view/cpp/backtracking/printAllBinary">这题</a>，用<code>recursionIndent</code>查看递归调用的情况：</p>
+<div class="admonition success">
+<p class="admonition-title">recursionIndent</p>
+<p>斯坦福库里的递归关系可视化函数
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">printAllBinary</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">recursionIndent</span><span class="p">()</span>
-<span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;n = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span>
-<span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, prefix = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;n = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, prefix = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
 <span class="w">        </span><span class="k">return</span><span class="p">;</span>
@@ -1391,7 +1389,7 @@
 <span class="w">    </span><span class="n">printAllBinary</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></p>
-</blockquote>
+</div>
 <h3 id="2printdecimal">课堂练习2：printDecimal<a class="headerlink" href="#2printdecimal" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.codestepbystep.com/problem/view/cpp/backtracking/printAllDecimal">printDecimal</a>
 <div class="highlight"><pre><span></span><code><span class="c1">// printDecimal(2) --&gt; 01, 02, ... , 98, 99</span>
@@ -1407,9 +1405,7 @@
 <span class="p">}</span>
 </code></pre></div></p>
 <h3 id="3permute">课堂练习3：permute<a class="headerlink" href="#3permute" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p><strong>permutation排列</strong></p>
-</blockquote>
 <p><a href="https://www.codestepbystep.com/problem/view/cpp/backtracking/permute">permute</a></p>
 <div class="highlight"><pre><span></span><code><span class="c1">// permute(&quot;MENY&quot;) --&gt; </span>
 <span class="kt">void</span><span class="w"> </span><span class="n">permute</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1424,9 +1420,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ul>
-<li>[!] 如果想把permute的结果存入Vector：</li>
-</ul>
+<p>💡 如果想把permute的结果存入Vector：</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">permute</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1447,9 +1441,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<ul>
-<li>[!] 如果想让permute返回一个Vector：</li>
-</ul>
+<p>💡 如果想让permute返回一个Vector：</p>
 <div class="highlight"><pre><span></span><code><span class="n">Vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">permute</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">permuteHelper</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">prefix</span><span class="p">);</span>
 
@@ -1478,10 +1470,8 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="4combin">课堂练习4：combin<a class="headerlink" href="#4combin" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p><a href="https://www.codestepbystep.com/problem/view/cpp/backtracking/combin">combin</a></p>
-<p>permute的变体，保证得到的字符串是唯一没有重复的（字符可以重复，比如可以有<code>AAB</code>，但不能有两个相同的字符串~~{AAB, AAB}~~</p>
-</blockquote>
+<p>permute 的变体，保证得到的字符串是唯一没有重复的（字符可以重复，比如可以有<code>AAB</code>，但不能有两个相同的字符串 <del>{AAB, AAB}</del></p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">combin</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">printed</span><span class="p">;</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
@@ -1500,10 +1490,8 @@
 </code></pre></div>
 <p>这个实现不好，还可以优化</p>
 <h3 id="problem-six-eating-a-chocolate-bar">Problem Six: Eating a Chocolate Bar<a class="headerlink" href="#problem-six-eating-a-chocolate-bar" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p><a href="https://web.stanford.edu/class/cs106b/section/section2/#recursion">CS106B_Section 2</a>
-这题是lec10、lec11的知识点：穷尽搜索和回溯法</p>
-</blockquote>
+<p><a href="https://web.stanford.edu/class/cs106b/section/section2/#recursion">CS106B_Section 2</a></p>
+<p>这题是lec10、lec11的知识点：穷尽搜索和回溯法</p>
 <h4 id="1-int">1. 返回方法数<code>int</code><a class="headerlink" href="#1-int" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">numWaysToEat</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">numSquares</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">numSquares</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1561,8 +1549,8 @@
 <span class="p">}</span>
 </code></pre></div></p>
 <ul>
-<li>[!] 每次递归调用时，<code>soFar + 1</code> 和 <code>soFar + 2</code> 这种操作，会生成新的 <code>Vector&lt;int&gt;</code> 对象，而不会改变原始的 <code>soFar</code> 对象。这就保证了在递归调用返回之后，原始状态不会受到影响，也就无需进行 “回退” 操作。</li>
-<li>[!] 当然也可以用回溯法直接在同一个<code>Vector&lt;int&gt;</code>对象上修改啦！</li>
+<li>每次递归调用时，<code>soFar + 1</code> 和 <code>soFar + 2</code> 这种操作，会生成新的 <code>Vector&lt;int&gt;</code> 对象，而不会改变原始的 <code>soFar</code> 对象。这就保证了在递归调用返回之后，原始状态不会受到影响，也就无需进行 “回退” 操作。</li>
+<li>当然也可以用回溯法直接在同一个<code>Vector&lt;int&gt;</code>对象上修改啦！</li>
 </ul>
 <h5 id="21-stl">2.1 回溯法（用STL<a class="headerlink" href="#21-stl" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">printWaysToEatHelper</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">numSquares</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">soFar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1612,10 +1600,8 @@
 <span class="w">    </span><span class="c1">// 注意去掉const修饰符后不能再将{}作为参数了</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>因为斯坦福库里Vector类没有从末尾删除元素的函数，所以这里用的STL更方便一点</p>
-<p>事实上，因为没有SPL中的cout，导致输出vector的内容复杂了很多。。</p>
-</blockquote>
+<p>因为斯坦福库里 Vector 类没有从末尾删除元素的函数，所以这里用的 STL 更方便一点</p>
+<p>事实上，因为没有 SPL 中的 cout ，导致输出 vector 的内容复杂了很多。。</p>
 <h5 id="22-spl">2.2 回溯法（用SPL<a class="headerlink" href="#22-spl" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">printWaysToEatHelper</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">numSquares</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">soFar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">numSquares</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1697,11 +1683,9 @@
 <hr />
 <h2 id="lec11recursive-backtracking">lec11回溯法recursive backtracking<a class="headerlink" href="#lec11recursive-backtracking" title="Permanent link">&para;</a></h2>
 <h3 id="1-dicerolls">1. 初始回溯法：diceRolls<a class="headerlink" href="#1-dicerolls" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p>作业链接：<a href="https://www.codestepbystep.com/problem/view/cpp/backtracking/diceRolls">diceRolls</a></p>
 <p>作业描述：投掷n枚骰子🎲，打印出所有可能的结果。变量dice代表🎲数量</p>
 <p>作业备注：每一个骰子都有6种可能的点数（这也需要备注吗</p>
-</blockquote>
 <h4 id="11">1.1 前面所学的解法：<a class="headerlink" href="#11" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">diceRollsHelper</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dice</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">soFar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dice</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1743,11 +1727,9 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="2-dicesum">2. 剪枝diceSum<a class="headerlink" href="#2-dicesum" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p>🔗<a href="https://www.codestepbystep.com/problem/view/cpp/backtracking/diceSum">diceSum</a></p>
 <p>🔍上面我们得出的是掷2枚🎲的所有可能情况。</p>
 <p>💡现在加一点限制：求掷2枚🎲，且和为7的所有情况</p>
-</blockquote>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">diceSumHelper</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dice</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">soFar</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">currentSum</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dice</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sum</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">currentSum</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1779,10 +1761,8 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="3-sublists">3. 子集sublists<a class="headerlink" href="#3-sublists" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p>🔗<a href="https://www.codestepbystep.com/problem/view/cpp/backtracking/printSubVectors">printSubVectors</a></p>
 <p>🔍对于集合中的每个元素，有包含在子集中和不包含在子集中两种可能</p>
-</blockquote>
 <h4 id="31-assignment-3">3.1 用写Assignment 3的方法<a class="headerlink" href="#31-assignment-3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">sublistsHelper</span><span class="p">(</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">chosen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Base case</span>
@@ -1834,20 +1814,18 @@
 <span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">first</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
 <p>STL写法：</p>
 <ol>
 <li><code>vector&lt;string&gt; remaining(v.bigin() + 1, v.end());</code></li>
 <li><code>chosen.push_back(first)</code> &amp;&amp; <code>chosen.pop_back()</code></li>
 <li><code>v.erase(v.begin())</code> &amp;&amp; <code>v.insert(v.begin(), first)</code></li>
 </ol>
-</blockquote>
 <hr />
 <h2 id="lec12-8-queens">lec12回溯法 8 queens<a class="headerlink" href="#lec12-8-queens" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>💻课堂练习：
-- [x] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/travel">travel</a></p>
-</blockquote>
+<p>💻课堂练习：</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/travel">travel</a></li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">solveQueensHelper</span><span class="p">(</span><span class="n">Board</span><span class="o">&amp;</span><span class="w"> </span><span class="n">board</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">col</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">board</span><span class="p">.</span><span class="n">size</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">board</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>

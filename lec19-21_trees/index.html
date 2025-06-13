@@ -1088,11 +1088,10 @@
 
 
 <h1 id="lec19-21_trees">Lec19-21_Trees<a class="headerlink" href="#lec19-21_trees" title="Permanent link">&para;</a></h1>
-<blockquote>
 <ul>
 <li>Lec19 二叉树</li>
 <li>Lec20 二叉搜索树</li>
-<li>Lec21 Advanced Trees</li>
+<li>Lec21 Advanced Trees<ul>
 <li>平衡树<ul>
 <li>ALV树</li>
 <li>红黑树</li>
@@ -1101,15 +1100,18 @@
 </li>
 <li>字典树Tries</li>
 </ul>
-<p>看视频效率太低了，也讲不了多少东西。以后直接看PPT，不懂的地方问GPT
-1. print
-2. size
-3. contains
-4. getMin
-5. getMax
-6. add
-7. remove</p>
-</blockquote>
+</li>
+</ul>
+<p>看视频效率太低了，也讲不了多少东西。以后直接看 PPT ，不懂的地方问 GPT</p>
+<ol>
+<li>print</li>
+<li>size</li>
+<li>contains</li>
+<li>getMin</li>
+<li>getMax</li>
+<li>add</li>
+<li>remove</li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
 <span class="w">    </span><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
@@ -1122,11 +1124,11 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>[!note]
-可以在构造函数添加*成员初始化列表*：
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>可以在构造函数添加*成员初始化列表*：
 <div class="highlight"><pre><span></span><code><span class="n">TreeNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span>
-<span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">data</span><span class="p">(</span><span class="n">d</span><span class="p">),</span><span class="w"> </span><span class="n">left</span><span class="p">(</span><span class="n">l</span><span class="p">),</span><span class="w"> </span><span class="n">right</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">data</span><span class="p">(</span><span class="n">d</span><span class="p">),</span><span class="w"> </span><span class="n">left</span><span class="p">(</span><span class="n">l</span><span class="p">),</span><span class="w"> </span><span class="n">right</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div>
 也可以分开写多个构造函数，可读性更好：
 <div class="highlight"><pre><span></span><code><span class="c1">// 无参数</span>
@@ -1135,11 +1137,10 @@
 <span class="n">TreeNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">data</span><span class="p">(</span><span class="n">d</span><span class="p">),</span><span class="w"> </span><span class="n">left</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span><span class="w"> </span><span class="n">right</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 <span class="c1">// 三个参数</span>
 <span class="n">TreeNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span>
-<span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">data</span><span class="p">(</span><span class="n">d</span><span class="p">),</span><span class="w"> </span><span class="n">left</span><span class="p">(</span><span class="n">l</span><span class="p">),</span><span class="w"> </span><span class="n">right</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">data</span><span class="p">(</span><span class="n">d</span><span class="p">),</span><span class="w"> </span><span class="n">left</span><span class="p">(</span><span class="n">l</span><span class="p">),</span><span class="w"> </span><span class="n">right</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div></p>
-</blockquote>
+</div>
 <h4 id="1-print">1. print<a class="headerlink" href="#1-print" title="Permanent link">&para;</a></h4>
-<blockquote>
 <p>前、中、后序遍历
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1152,7 +1153,6 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
-</blockquote>
 <h4 id="2-size">2. size<a class="headerlink" href="#2-size" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">size</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1175,15 +1175,17 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>进一步，当是**二叉搜索树**时
-- BSTs
-  1. 遍历Traversing
-      - contains
-      - getMin/getMax
-  2. 添加Adding
-  3. 删除Removing </p>
-</blockquote>
+<p>进一步，当是**二叉搜索树**时</p>
+<p>BSTs</p>
+<ol>
+<li>遍历 Traversing<ul>
+<li>contains</li>
+<li>getMin/getMax</li>
+</ul>
+</li>
+<li>添加 Adding</li>
+<li>删除 Removing </li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">contains</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1239,10 +1241,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>[!important]
-注意按引用传递。</p>
-</blockquote>
+<p>注意按引用传递。</p>
 <h4 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">remove</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1281,9 +1280,7 @@
 <p>用后序遍历。delete当前节点前，需要先保证左右子树已经全部delete</p>
 <h2 id="tries">Tries<a class="headerlink" href="#tries" title="Permanent link">&para;</a></h2>
 <h4 id="containsprefix">containsPrefix<a class="headerlink" href="#containsprefix" title="Permanent link">&para;</a></h4>
-<blockquote>
 <p>字典树</p>
-</blockquote>
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">containsPrefix</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">prefix</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>

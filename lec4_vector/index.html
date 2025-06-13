@@ -950,7 +950,6 @@
 
 
 <h1 id="lec4_vector">Lec4_Vector<a class="headerlink" href="#lec4_vector" title="Permanent link">&para;</a></h1>
-<blockquote>
 <p>💻lec4练习题：</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/collections/vector/vectorMysteryRemove">1. vectorMysteryRemove</a></li>
@@ -961,9 +960,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/collections/vector/addStars">5. addStars</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/collections/vector/intersect">6. intersect</a>双指针(索引)</li>
 </ul>
-</blockquote>
 <h4 id="5addstars">练习题5：addStars<a class="headerlink" href="#5addstars" title="Permanent link">&para;</a></h4>
-<blockquote>
 <p>练习reserve()、swap()
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">addStars</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
@@ -973,7 +970,6 @@
 <span class="p">}</span>
 </code></pre></div>
 insert的时间复杂度是<span class="arithmatex">\(O(n)\)</span></p>
-</blockquote>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">addStars</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">newSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
