@@ -47,14 +47,16 @@ getline(cin, name); // 输入：David Malan
 cout << "Hello, " << name << endl; // 输出：Hello, David Malan
 ```
 它接受两个参数：从哪读取、存到哪去。没有返回值（说明name是作为引用参数传递的）
+
 - [nameDiamond](https://codestepbystep.com/r/problem/view/cpp/strings/nameDiamond)
+
 - **C string 和 C++ String**
 	- C中的string是字符数组`char*`，没有C++ String中的成员函数可以使用
 	- 当在程序中直接写"Hello", "world"时，是C String
 	- 当`string s = "Hello";`时，会转化为C++ String
 	- 一个容易出错的例子：`string s = "Hello " + "world";`
 	- 右边"Hello "和"world"都是C String，并不能像C++ String一样通过"+"直接连接。不过编译器也不会报错，实际会进行指针运算，让两个地址相加后赋值给变量s，导致预期外的内存操作，造成程序崩溃。
-	- ![lec3-3](images/lec3-3.png)
+	![lec3-3](images/lec3-3.png)
 	- 可以通过`string("hi")`转换为C++ string，两个string中只要有一个string是C++ string，用"+"连接时会自动转换为C++ string
 #### 遍历字符串
 1. `[]`访问下标
@@ -96,7 +98,7 @@ while (inFile >> word) {
 
 2. **sstream字符串流**
 
-**istringstream**将字符串当作输入流从中读取数据。常用于解析字符串中的数据
+**istringstream** 将字符串当作输入流从中读取数据。常用于解析字符串中的数据
 ```cpp
 #include <sstream>
 #include <string>
@@ -108,7 +110,7 @@ input >> s >> i;
 cout << "This is " << s << " " << i;
 // This is CS50x 2025
 ```
-**ostringstream**输出流，它允许你将数据写入字符串（实际上是一种高效构建、累计字符串的方式），而不是直接写到控制台或者文件。这使得它非常适合于字符串拼接、格式化或者缓存数据以便后续使用。`<<`运算符将数据写入流，通过`str()`方法获取生成的字符串。
+**ostringstream** 输出流，它允许你将数据写入字符串（实际上是一种高效构建、累计字符串的方式），而不是直接写到控制台或者文件。这使得它非常适合于字符串拼接、格式化或者缓存数据以便后续使用。`<<`运算符将数据写入流，通过`str()`方法获取生成的字符串。
 ```cpp
 ostringstream output;
 int year = 2025;
