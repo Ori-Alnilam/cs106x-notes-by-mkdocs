@@ -1,9 +1,9 @@
 # Assignment3
-> 作业地址：[Recursion!](https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1224/assignments/a3/)
-> 
-> 备注：作业3实际应该在学完lec10**穷举搜索**和lec11**回溯法**后再写，会轻松很多。我看完lec9就写了，写得非常痛苦
+作业地址：[Recursion!](https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1224/assignments/a3/)
+
+备注：作业3实际应该在学完lec10**穷举搜索**和lec11**回溯法**后再写，会轻松很多。我看完lec9就写了，写得非常痛苦
 ## Part One: The Sierpinski Triangle
-> 谢尔宾斯基三角形。
+谢尔宾斯基三角形。
 
 #### 代码实现
 ```cpp
@@ -27,13 +27,13 @@ void drawSierpinskiTriangle(GWindow& window,
 ![ass3-1](images/ass3-1.png)
 
 ## Part Two: Human Pyramids
-> 人类金字塔。
-> 1. memoization
+人类金字塔。
+1. memoization
 
 ![ass3-2](images/ass3-2.png)
 
 #### 代码实现
-> 不愿意代码里出现多个`160`，所以声明了一个全局常量。（在静态局部变量和全局常量中选择了全局常量，虽说容易污染全局变量空间什么的，但我还是觉得这样可读性和后续修改起来更好一点）
+不愿意代码里出现多个`160`，所以声明了一个全局常量。（在静态局部变量和全局常量中选择了全局常量，虽说容易污染全局变量空间什么的，但我还是觉得这样可读性和后续修改起来更好一点）
 ```cpp
 #include "HumanPyramids.h"
 #include "hashmap.h"
@@ -76,10 +76,10 @@ double weightOnBackOf(int row, int col, int pyramidHeight) {
 ![ass3-3](images/ass3-3.png)
 
 ## Part Three: What Are YOU Doing?
-> 这题可以参考一下课上讲的练习题`evaluate`：变量index
-> 
-> 1. 每次递归到终止条件得到一种可能结果currentResult
-> 2. 所有currentResult加起来的集合results，就是所有可能的强调情况
+这题可以参考一下课上讲的练习题`evaluate`：变量index
+
+1. 每次递归到终止条件得到一种可能结果currentResult
+2. 所有currentResult加起来的集合results，就是所有可能的强调情况
 
 ```cpp
 #include <cctype>
@@ -120,9 +120,9 @@ void allEmphasesOfHelper(const Vector<string>& tokens, int index, Set<string>& r
 ```
 
 ## Part Four: Shift Scheduling
-> lengthOf()返回班次的工作时长，valueOf()返回班次带来的价值、overlapsWith()比较两个班次是否冲突
-> 
-> lec11课堂练习`sublists`和这题类似
+lengthOf() 返回班次的工作时长，valueOf() 返回班次带来的价值、overlapsWith() 比较两个班次是否冲突
+
+lec11课堂练习`sublists`和这题类似
 
 ```cpp
 思路：
@@ -222,11 +222,11 @@ Set<Shift> highestValueScheduleForHelper(const Set<Shift>& shifts, int maxHours,
 #### 结果展示
 ![ass3-4](images/ass3-4.png)
 
-> 恭喜完成Assignment 3！
-> 
-> 这次作业是目前耗时最久最难的一次，Part 1、2还比较容易，到Part 3就需要好好思考了，Part 4更是尝试了好久好久。
-> 
-> ~~应该还可以优化，我累了~~
+恭喜完成Assignment 3！
+
+这次作业是目前耗时最久最难的一次，Part 1、2还比较容易，到Part 3就需要好好思考了，Part 4更是尝试了好久好久。
+
+~~应该还可以优化，我累了~~
 
 ---
 

@@ -1,20 +1,21 @@
 # Lec7-9_Recursion
-> 课后Recursion练习题（CS106X_2017_Section2）
-> 
-> - [x] [1. recursionMysteryComma](https://www.codestepbystep.com/problem/view/cpp/recursion/recursionMysteryComma)
-> - [x] [2. reverse反转字符串](https://www.codestepbystep.com/problem/view/cpp/recursion/reverse)
-> - [x] [3. sumOfSquares](https://www.codestepbystep.com/problem/view/cpp/recursion/sumOfSquares)
-> - [x] [4. stutterStack](https://www.codestepbystep.com/problem/view/cpp/recursion/stutterStack)
-> - [x] [5. countToBy](https://www.codestepbystep.com/problem/view/cpp/recursion/countToBy)
-> - [x] [6. combin](https://www.codestepbystep.com/problem/view/cpp/recursion/combin)这个用到了概率论的知识。练习了lec9学到的memoization
-> - [x] [7. isSubsequence](https://www.codestepbystep.com/problem/view/cpp/recursion/isSubsequence)判断是否是子序列
-> - [ ] [longestCommonSubsequence](https://www.codestepbystep.com/problem/view/cpp/backtracking/longestCommonSubsequence)不会写
-> - [ ] [editDistance](https://www.codestepbystep.com/problem/view/cpp/recursion/editDistance)不想写
-> 
-> lec7练习题
-> - [x] [1. recursionMystery648](https://www.codestepbystep.com/problem/view/cpp/recursion/recursionMystery648)简单的选择题
-> - [x] [2. power](https://www.codestepbystep.com/problem/view/cpp/recursion/power)递归实现pow()
-> - [x] [3. isPalindrome](https://www.codestepbystep.com/problem/view/cpp/recursion/isPalindrome)递归判断回文字符串
+课后Recursion练习题（CS106X_2017_Section2）
+
+- [x] [1. recursionMysteryComma](https://www.codestepbystep.com/problem/view/cpp/recursion/recursionMysteryComma)
+- [x] [2. reverse反转字符串](https://www.codestepbystep.com/problem/view/cpp/recursion/reverse)
+- [x] [3. sumOfSquares](https://www.codestepbystep.com/problem/view/cpp/recursion/sumOfSquares)
+- [x] [4. stutterStack](https://www.codestepbystep.com/problem/view/cpp/recursion/stutterStack)
+- [x] [5. countToBy](https://www.codestepbystep.com/problem/view/cpp/recursion/countToBy)
+- [x] [6. combin](https://www.codestepbystep.com/problem/view/cpp/recursion/combin)这个用到了概率论的知识。练习了lec9学到的memoization
+- [x] [7. isSubsequence](https://www.codestepbystep.com/problem/view/cpp/recursion/isSubsequence)判断是否是子序列
+- [ ] [longestCommonSubsequence](https://www.codestepbystep.com/problem/view/cpp/backtracking/longestCommonSubsequence)不会写
+- [ ] [editDistance](https://www.codestepbystep.com/problem/view/cpp/recursion/editDistance)不想写
+
+lec7练习题
+
+- [x] [1. recursionMystery648](https://www.codestepbystep.com/problem/view/cpp/recursion/recursionMystery648)简单的选择题
+- [x] [2. power](https://www.codestepbystep.com/problem/view/cpp/recursion/power)递归实现pow()
+- [x] [3. isPalindrome](https://www.codestepbystep.com/problem/view/cpp/recursion/isPalindrome)递归判断回文字符串
 
 ### lec7练习题3：isPalindrome
 ```cpp
@@ -33,21 +34,21 @@ bool isPalindrome(string s) {
 感觉我写得怪怪的......
 
 ### Section2练习题6：Combin
-> [!note] 
-> **组合数（Combination）**：在数学中，组合数 $C(n,k)$ 表示从 $n$ 个不同元素中选取 $k$ 个元素的方案数，不考虑顺序。公式为：
-> $$C(n, k) = \frac{n!}{k! \cdot (n - k)!}$$
-> 
-> 组合数 $C(n,k)$ 满足以下递推关系：
-> 
-> $$C(n, k) = C(n-1, k-1) + C(n-1, k)$$
-> 
-> - 从 nn 个元素中选取 kk 个元素，可以分为两种情况：
-> 	
-> 	1. 包含第 $n$ 个元素：需要从剩下的 $n−1$ 个元素中选取 $k−1$ 个元素，即 $C(n−1,k−1)$ 。
-> 		
-> 	2. 不包含第 $n$ 个元素：需要从剩下的 $n−1$ 个元素中选取 $k$ 个元素，即 $C(n−1,k)$ 。
-> 		
-> - 将这两种情况的方案数相加，就是总的方案数。
+!!! note
+    **组合数（Combination）**：在数学中，组合数 $C(n,k)$ 表示从 $n$ 个不同元素中选取 $k$ 个元素的方案数，不考虑顺序。公式为：
+    $$C(n, k) = \frac{n!}{k! \cdot (n - k)!}$$
+
+    组合数 $C(n,k)$ 满足以下递推关系：
+
+    $$C(n, k) = C(n-1, k-1) + C(n-1, k)$$
+
+    - 从 nn 个元素中选取 kk 个元素，可以分为两种情况：
+        
+        1. 包含第 $n$ 个元素：需要从剩下的 $n−1$ 个元素中选取 $k−1$ 个元素，即 $C(n−1,k−1)$ 。
+            
+        2. 不包含第 $n$ 个元素：需要从剩下的 $n−1$ 个元素中选取 $k$ 个元素，即 $C(n−1,k)$ 。
+            
+    - 将这两种情况的方案数相加，就是总的方案数。
 
 ```cpp
 long long combin(int n, int k) {
@@ -106,7 +107,8 @@ bool isSubsequence(const string& s, const string& t, int i = 0, int j = 0) {
 
 ### 课堂练习1：printBinary
 [printBinary](https://www.codestepbystep.com/problem/view/cpp/recursion/printBinary)
-> 十进制转化为二进制：**除2取余法**
+
+十进制转化为二进制：**除2取余法**
 
 ```cpp
 void printBinary(int n) {
@@ -136,7 +138,9 @@ void reverseLines(ifstream& input) {
 ```
 
 ### 课堂练习3：crawl
-> [crawl](https://www.codestepbystep.com/problem/view/cpp/recursion/crawl)打印文件目录
+[crawl](https://www.codestepbystep.com/problem/view/cpp/recursion/crawl)
+
+打印文件目录
 
 ```cpp
 #include "filelib.h"
@@ -158,7 +162,7 @@ void crawl(const string& filename, const string& indentation) {
 - [!] 当字符串作为参数传递时，大多时候`const string& s`更好。*（如果不希望字符串被更改的话）*
 
 ### 课堂练习4：Fibonacci
-> 斐波那契数列1、1、2、3、5、8、13、21、34...
+斐波那契数列1、1、2、3、5、8、13、21、34...
 
 ```cpp
 #include "hashmap.h"
@@ -194,17 +198,18 @@ int fib(int n) {
 
 函数体内的static变量：
 
-> [!note] 
-> 我们想用一个HashMap来缓存fib(n)的值，最开始是在函数外声明一个全局变量
-> ```cpp
-> HashMap<int, int> cache;
-> int fib(int n) {...}
-> ```
-> 使用global variable是糟糕的！*（全局变量会破坏数据的安全性）*在C++中，可以在函数体内声明一个static变量，相当于“函数的专属global变量”。这样，不会在每次调用函数时都构造一个新的HashMap对象，而只会在函数第一次调用时构造一次，但之后的调用都可以使用这个对象。“仅对此函数可见的global变量”*（这样形容只是方便理解，并不是global变量啊）*
+!!! note
+    我们想用一个HashMap来缓存fib(n)的值，最开始是在函数外声明一个全局变量
+    ```cpp
+    HashMap<int, int> cache;
+    int fib(int n) {...}
+    ```
+    使用global variable是糟糕的！ *（全局变量会破坏数据的安全性）* 在C++中，可以在函数体内声明一个static变量，相当于“函数的专属global变量”。这样，不会在每次调用函数时都构造一个新的HashMap对象，而只会在函数第一次调用时构造一次，但之后的调用都可以使用这个对象。“仅对此函数可见的global变量” *（这样形容只是方便理解，并不是global变量啊）*
 
 ### 课堂练习5：evaluate
-> [evaluateMathExpression](https://www.codestepbystep.com/problem/view/cpp/recursion/evaluateMathExpression)
-> 讲到了`recursion.h`中的`recursionIndent()`
+[evaluateMathExpression](https://www.codestepbystep.com/problem/view/cpp/recursion/evaluateMathExpression)
+
+讲到了`recursion.h`中的`recursionIndent()`
 
 ```cpp
 int evalHelper(const string& exp, int& index) {
@@ -238,13 +243,13 @@ int evaluateMathExpression(const string& exp) {
 ---------         ---------
 ---   ---         ---   ---
 - -   - -         - -   - -
-```
 
-> 绘制一个cantorSet(leval 4)相当于：
-> 1. 先绘制一条长线
-> 2. 再左右各绘制一个低一级的cantorSet(leval 3)
-> 
-> 	绘制一个cantorSet(leval 3) 相当于......
+绘制一个cantorSet(leval 4)相当于：
+1. 先绘制一条长线
+2. 再左右各绘制一个低一级的cantorSet(leval 3)
+
+	绘制一个cantorSet(leval 3) 相当于......
+```
 
 ```cpp
 void cantorSet(GWindow& window, int x, int y, int length, int levels) {
