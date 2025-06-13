@@ -1024,7 +1024,7 @@
 </li>
 <li>字符串长度<code>s.length()</code>或<code>s.size()</code><ul>
 <li>标准库实现在<code>std::string</code> 内部维护一个成员变量来记录字符串的长度，每次调用 <code>length()</code> 时只需返回这个已保存的值，不需要遍历整个字符串。时间复杂度为<span class="arithmatex">\(O(1)\)</span>。多次调用也几乎没有额外开销。</li>
-<li>[!] 这与C中常用的<code>string.h</code>库中的<code>strlen()</code>不同，<code>strlen()</code> 必须遍历字符数组，查找终止的 <code>\0</code> 来计算字符串的长度，时间复杂度为<span class="arithmatex">\(O(n)\)</span>。如果在循环中频繁调用可能会带来较高的开销。</li>
+<li>这与C中常用的<code>string.h</code>库中的<code>strlen()</code>不同，<code>strlen()</code> 必须遍历字符数组，查找终止的 <code>\0</code> 来计算字符串的长度，时间复杂度为<span class="arithmatex">\(O(n)\)</span>。如果在循环中频繁调用可能会带来较高的开销。</li>
 </ul>
 </li>
 <li>

@@ -1017,13 +1017,13 @@
 </ul>
 </li>
 <li>每个项目最终只能有一个 <code>main()</code> 函数作为入口。如果希望两个 cpp 文件共同工作，就需要调整文件逻辑，把一个文件的功能拆分为可调用的函数，而另一个文件负责程序入口。</li>
-<li>[!] 注意到 C++ 里面无参数函数声明时<code>int func();</code> 并不像 C 中一样用<code>void</code>显式表示“无参数”，原因是 C 和 C++ 对<code>()</code>的语义解释不同。<ol>
+<li>注意到 C++ 里面无参数函数声明时<code>int func();</code> 并不像 C 中一样用<code>void</code>显式表示“无参数”，原因是 C 和 C++ 对<code>()</code>的语义解释不同。<ol>
 <li>在 C 中，<code>int func();</code>这种没有 void 的写法被解释为 <strong>参数未指定</strong> ，即可以接受任意数量和类型的参数，<code>func(10)</code>的调用是合法的，所以如果没有参数的函数定义必须明确使用<code>void</code>；</li>
 <li>而在 C++ 里，空括号则明确表示该函数 <strong>没有参数</strong> ，与<code>void</code>含义相同。<code>int func();</code>和<code>int func(void);</code>是一样的。</li>
 </ol>
 </li>
 <li>和 C 中一样，因为编译器是从上到下遍历代码的，所以如果辅助函数写在 main 函数后面，在 main 中调用辅助函数时会报错。需要先在最前面加一行函数原型 ( function prototype ) 。（在 Java 和 Python 中不需要这样）*<ul>
-<li>[?] 当函数原型和函数定义分开时处理默认参数：</li>
+<li>❓ 当函数原型和函数定义分开时处理默认参数：</li>
 <li>前面的函数原型<code>void func(int n = 2);</code></li>
 <li>后面的函数定义<code>void func(int n) {...}</code></li>
 </ul>
