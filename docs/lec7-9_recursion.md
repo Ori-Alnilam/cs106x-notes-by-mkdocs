@@ -36,6 +36,7 @@ bool isPalindrome(string s) {
 ### Section2练习题6：Combin
 !!! note
     **组合数（Combination）**：在数学中，组合数 $C(n,k)$ 表示从 $n$ 个不同元素中选取 $k$ 个元素的方案数，不考虑顺序。公式为：
+
     $$C(n, k) = \frac{n!}{k! \cdot (n - k)!}$$
 
     组合数 $C(n,k)$ 满足以下递推关系：
@@ -69,7 +70,7 @@ long long combin(int n, int k) {
     }
 }
 ```
-- [!] 如果不用SPL库，只需把HashMap改成`unordered_map`，`if (m.containsKey(key))`改成`if (m.find(key) != m.end()`就可以了。
+💡 如果不用SPL库，只需把HashMap改成`unordered_map`，`if (m.containsKey(key))`改成`if (m.find(key) != m.end()`就可以了。
 
 ### Section2练习题7：isSubsequence
 ```cpp
@@ -87,7 +88,7 @@ bool isSubsequence(string s, string subs) {
 ```
 感觉自己写得怪怪的+1
 
-- [!] 改进后的代码：
+💡 改进后的代码：
 ```cpp
 bool isSubsequence(const string& s, const string& t, int i = 0, int j = 0) {
     if (j == t.length()) { // 或者if(t.empty())
@@ -159,7 +160,7 @@ void crawl(const string& filename, const string& indentation) {
 }
 ```
 
-- [!] 当字符串作为参数传递时，大多时候`const string& s`更好。*（如果不希望字符串被更改的话）*
+当字符串作为参数传递时，大多时候`const string& s`更好。*（如果不希望字符串被更改的话）*
 
 ### 课堂练习4：Fibonacci
 斐波那契数列1、1、2、3、5、8、13、21、34...
@@ -176,8 +177,8 @@ int fib(int n) {
 }
 ```
 
-- [!] 这种方法虽然可行，效率却很低，有很多不必要的调用。fib(3)已经计算过了，但计算fib(4)的时候还会再计算一遍fib(3)、计算fib(5)的时候又会重复计算fib(3)和fib(4)......
-- [!] 所以把计算的结果缓存起来！下次调用时直接return而不是进入递归计算 
+- 这种方法虽然可行，效率却很低，有很多不必要的调用。fib(3)已经计算过了，但计算fib(4)的时候还会再计算一遍fib(3)、计算fib(5)的时候又会重复计算fib(3)和fib(4)......
+- 所以把计算的结果缓存起来！下次调用时直接return而不是进入递归计算 
 
 ### memoization
 ```cpp
@@ -204,7 +205,7 @@ int fib(int n) {
     HashMap<int, int> cache;
     int fib(int n) {...}
     ```
-    使用global variable是糟糕的！ *（全局变量会破坏数据的安全性）* 在C++中，可以在函数体内声明一个static变量，相当于“函数的专属global变量”。这样，不会在每次调用函数时都构造一个新的HashMap对象，而只会在函数第一次调用时构造一次，但之后的调用都可以使用这个对象。“仅对此函数可见的global变量” *（这样形容只是方便理解，并不是global变量啊）*
+    使用 global variable 是糟糕的！ *（全局变量会破坏数据的安全性）* 在C++中，可以在函数体内声明一个 static 变量，相当于“函数的专属 global 变量”。这样，不会在每次调用函数时都构造一个新的 HashMap 对象，而只会在函数第一次调用时构造一次，但之后的调用都可以使用这个对象。“仅对此函数可见的 global 变量” *（这样形容只是方便理解，并不是global变量啊）*
 
 ### 课堂练习5：evaluate
 [evaluateMathExpression](https://www.codestepbystep.com/problem/view/cpp/recursion/evaluateMathExpression)
