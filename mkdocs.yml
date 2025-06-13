@@ -1,0 +1,74 @@
+site_name: CS106X 学习笔记
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: default         # 日间模式
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: 切换为夜间模式
+
+    - scheme: slate           # 夜间模式
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: 切换为日间模式
+  features:
+    # - navigation.tabs
+    # - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy  # 一键复制代码
+    - content.action.edit
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.betterem:
+      smart_enable: all
+  - footnotes
+  - pymdownx.caret        # 下划线 ^text^
+  - pymdownx.tilde        # 删除线 ~~text~~
+
+nav:
+  - 首页: index.md
+  - Assignment 0: assignment0.md
+  - Functions: lec2_functions.md
+  - Strings: lec3_strings.md
+  - Assignment 1: assignment1.md
+  - Vector: lec4_vector.md
+  - Stacks and Queues: lec5_stacks_and_queues.md
+  - Sets and Maps: lec6_sets_and_maps.md
+  - Assignment 2: assignment2.md
+  - Recursion: lec7-9_recursion.md
+  - Assignment 3: assignment3.md
+  - Backtracking: lec10-12_exhaustive_search.md
+  - Assignment 4: assignment4.md
+  - Linked Lists: lec13-15_linked_lists.md
+  - Classes: lec16-17_classes.md
+  - Arrays: lec18_arrays.md
+  - Assignment 5: assignment_5.md
+  - Trees: lec19-21_trees.md
+  - Assignment 6: assignment6.md
+  - Graphs: lec22-25_graphs.md
+  - Inheritance: lec26_inheritance.md
+  - Hashing: lec27_hashing.md
+  - Assignment 7: assignment7.md
+  - Sorting: lec28_sorting.md
+  - Templates & STL: lec29_stl.md
+
+

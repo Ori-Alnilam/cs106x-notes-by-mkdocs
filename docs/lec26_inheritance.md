@@ -1,0 +1,5 @@
+# Lec26_Inheritance
+
+
+---
+
