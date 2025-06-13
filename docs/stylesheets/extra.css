@@ -1,0 +1,17 @@
+/* 正文字体整体放大 */
+.md-typeset {
+  font-size: 16px;  /* 默认是 16px */
+  line-height: 1.8; /* 行间距更舒适 */
+}
+
+/* 提示框（!!! note, warning 等）的字体放大 */
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 16px;
+}
+
+/* 提示框标题字体更大一些 */
+.md-typeset .admonition-title {
+  font-size: 18px;
+  font-weight: bold;
+}

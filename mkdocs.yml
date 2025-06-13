@@ -4,6 +4,9 @@ repo_name: GitHub
 theme:
   name: material
   language: zh
+  font:
+    text: Roboto Slab
+    code: Fira Code
   palette:
     - scheme: default         # 日间模式
       primary: blue
@@ -73,4 +76,6 @@ nav:
   - Sorting: lec28_sorting.md
   - Templates & STL: lec29_stl.md
 
+extra_css:
+  - stylesheets/extra.css
 
