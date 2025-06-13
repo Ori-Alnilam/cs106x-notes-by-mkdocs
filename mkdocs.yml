@@ -1,4 +1,6 @@
 site_name: CS106X 学习笔记
+repo_url: https://github.com/Ori-Alnilam/cs106x-notes-by-mkdocs/
+repo_name: GitHub
 theme:
   name: material
   language: zh
