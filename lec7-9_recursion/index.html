@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1092,22 +1094,24 @@
 
 
 <h1 id="lec7-9_recursion">Lec7-9_Recursion<a class="headerlink" href="#lec7-9_recursion" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>课后Recursion练习题（CS106X_2017_Section2）
-- [x] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/recursionMysteryComma">1. recursionMysteryComma</a>
-- [x] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/reverse">2. reverse反转字符串</a>
-- [x] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/sumOfSquares">3. sumOfSquares</a>
-- [x] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/stutterStack">4. stutterStack</a>
-- [x] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/countToBy">5. countToBy</a>
-- [x] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/combin">6. combin</a>这个用到了概率论的知识。练习了lec9学到的memoization
-- [x] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/isSubsequence">7. isSubsequence</a>判断是否是子序列
-- [ ] <a href="https://www.codestepbystep.com/problem/view/cpp/backtracking/longestCommonSubsequence">longestCommonSubsequence</a>不会写
-- [ ] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/editDistance">editDistance</a>不想写</p>
-<p>lec7练习题
-- [x] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/recursionMystery648">1. recursionMystery648</a>简单的选择题
-- [x] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/power">2. power</a>递归实现pow()
-- [x] <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/isPalindrome">3. isPalindrome</a>递归判断回文字符串</p>
-</blockquote>
+<p>课后Recursion练习题（CS106X_2017_Section2）</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/recursionMysteryComma">1. recursionMysteryComma</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/reverse">2. reverse反转字符串</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/sumOfSquares">3. sumOfSquares</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/stutterStack">4. stutterStack</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/countToBy">5. countToBy</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/combin">6. combin</a>这个用到了概率论的知识。练习了lec9学到的memoization</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/isSubsequence">7. isSubsequence</a>判断是否是子序列</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/backtracking/longestCommonSubsequence">longestCommonSubsequence</a>不会写</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/editDistance">editDistance</a>不想写</li>
+</ul>
+<p>lec7练习题</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/recursionMystery648">1. recursionMystery648</a>简单的选择题</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/power">2. power</a>递归实现pow()</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.codestepbystep.com/problem/view/cpp/recursion/isPalindrome">3. isPalindrome</a>递归判断回文字符串</li>
+</ul>
 <h3 id="lec73ispalindrome">lec7练习题3：isPalindrome<a class="headerlink" href="#lec73ispalindrome" title="Permanent link">&para;</a></h3>
 <p><div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">isPalindrome</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toLowerCase</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
@@ -1123,27 +1127,29 @@
 </code></pre></div>
 感觉我写得怪怪的......</p>
 <h3 id="section26combin">Section2练习题6：Combin<a class="headerlink" href="#section26combin" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>[!note] 
-<strong>组合数（Combination）</strong>：在数学中，组合数 $C(n,k)$ 表示从 $n$ 个不同元素中选取 $k$ 个元素的方案数，不考虑顺序。公式为：
-$$C(n, k) = \frac{n!}{k! \cdot (n - k)!}$$</p>
-<p>组合数 $C(n,k)$ 满足以下递推关系：</p>
-<p>$$C(n, k) = C(n-1, k-1) + C(n-1, k)$$</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>组合数（Combination）</strong>：在数学中，组合数 <span class="arithmatex">\(C(n,k)\)</span> 表示从 <span class="arithmatex">\(n\)</span> 个不同元素中选取 <span class="arithmatex">\(k\)</span> 个元素的方案数，不考虑顺序。公式为：
+<span class="arithmatex">\(<span class="arithmatex">\(C(n, k) = \frac{n!}{k! \cdot (n - k)!}\)</span>\)</span></p>
+<p>组合数 <span class="arithmatex">\(C(n,k)\)</span> 满足以下递推关系：</p>
+<div class="arithmatex">\[C(n, k) = C(n-1, k-1) + C(n-1, k)\]</div>
 <ul>
 <li>
 <p>从 nn 个元素中选取 kk 个元素，可以分为两种情况：</p>
+<ol>
+<li>
+<p>包含第 <span class="arithmatex">\(n\)</span> 个元素：需要从剩下的 <span class="arithmatex">\(n−1\)</span> 个元素中选取 <span class="arithmatex">\(k−1\)</span> 个元素，即 <span class="arithmatex">\(C(n−1,k−1)\)</span> 。</p>
 </li>
 <li>
-<p>包含第 $n$ 个元素：需要从剩下的 $n−1$ 个元素中选取 $k−1$ 个元素，即 $C(n−1,k−1)$ 。</p>
+<p>不包含第 <span class="arithmatex">\(n\)</span> 个元素：需要从剩下的 <span class="arithmatex">\(n−1\)</span> 个元素中选取 <span class="arithmatex">\(k\)</span> 个元素，即 <span class="arithmatex">\(C(n−1,k)\)</span> 。</p>
 </li>
-<li>
-<p>不包含第 $n$ 个元素：需要从剩下的 $n−1$ 个元素中选取 $k$ 个元素，即 $C(n−1,k)$ 。</p>
+</ol>
 </li>
 <li>
 <p>将这两种情况的方案数相加，就是总的方案数。</p>
 </li>
 </ul>
-</blockquote>
+</div>
 <p><div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">combin</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
 <span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">to_string</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">to_string</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
@@ -1197,9 +1203,7 @@ $$C(n, k) = \frac{n!}{k! \cdot (n - k)!}$$</p>
 </ul>
 <h3 id="1printbinary">课堂练习1：printBinary<a class="headerlink" href="#1printbinary" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.codestepbystep.com/problem/view/cpp/recursion/printBinary">printBinary</a></p>
-<blockquote>
 <p>十进制转化为二进制：<strong>除2取余法</strong></p>
-</blockquote>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">printBinary</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">;</span>
@@ -1223,9 +1227,8 @@ $$C(n, k) = \frac{n!}{k! \cdot (n - k)!}$$</p>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="3crawl">课堂练习3：crawl<a class="headerlink" href="#3crawl" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p><a href="https://www.codestepbystep.com/problem/view/cpp/recursion/crawl">crawl</a>打印文件目录</p>
-</blockquote>
+<p><a href="https://www.codestepbystep.com/problem/view/cpp/recursion/crawl">crawl</a></p>
+<p>打印文件目录</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;filelib.h&quot;</span>
 <span class="kt">void</span><span class="w"> </span><span class="n">crawl</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">indentation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
 
@@ -1245,9 +1248,7 @@ $$C(n, k) = \frac{n!}{k! \cdot (n - k)!}$$</p>
 <li>[!] 当字符串作为参数传递时，大多时候<code>const string&amp; s</code>更好。<em>（如果不希望字符串被更改的话）</em></li>
 </ul>
 <h3 id="4fibonacci">课堂练习4：Fibonacci<a class="headerlink" href="#4fibonacci" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p>斐波那契数列1、1、2、3、5、8、13、21、34...</p>
-</blockquote>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hashmap.h&quot;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1278,19 +1279,17 @@ $$C(n, k) = \frac{n!}{k! \cdot (n - k)!}$$</p>
 <span class="p">}</span>
 </code></pre></div>
 <p>函数体内的static变量：</p>
-<blockquote>
-<p>[!note] 
-我们想用一个HashMap来缓存fib(n)的值，最开始是在函数外声明一个全局变量
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>我们想用一个HashMap来缓存fib(n)的值，最开始是在函数外声明一个全局变量
 <div class="highlight"><pre><span></span><code><span class="n">HashMap</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cache</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{...}</span>
 </code></pre></div>
-使用global variable是糟糕的！<em>（全局变量会破坏数据的安全性）*在C++中，可以在函数体内声明一个static变量，相当于“函数的专属global变量”。这样，不会在每次调用函数时都构造一个新的HashMap对象，而只会在函数第一次调用时构造一次，但之后的调用都可以使用这个对象。“仅对此函数可见的global变量”</em>（这样形容只是方便理解，并不是global变量啊）*</p>
-</blockquote>
+使用global variable是糟糕的！ <em>（全局变量会破坏数据的安全性）</em> 在C++中，可以在函数体内声明一个static变量，相当于“函数的专属global变量”。这样，不会在每次调用函数时都构造一个新的HashMap对象，而只会在函数第一次调用时构造一次，但之后的调用都可以使用这个对象。“仅对此函数可见的global变量” <em>（这样形容只是方便理解，并不是global变量啊）</em></p>
+</div>
 <h3 id="5evaluate">课堂练习5：evaluate<a class="headerlink" href="#5evaluate" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p><a href="https://www.codestepbystep.com/problem/view/cpp/recursion/evaluateMathExpression">evaluateMathExpression</a>
-讲到了<code>recursion.h</code>中的<code>recursionIndent()</code></p>
-</blockquote>
+<p><a href="https://www.codestepbystep.com/problem/view/cpp/recursion/evaluateMathExpression">evaluateMathExpression</a></p>
+<p>讲到了<code>recursion.h</code>中的<code>recursionIndent()</code></p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">evalHelper</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">exp</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">exp</span><span class="p">[</span><span class="n">index</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">exp</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
@@ -1319,13 +1318,13 @@ $$C(n, k) = \frac{n!}{k! \cdot (n - k)!}$$</p>
 <span class="c1">---------         ---------</span>
 <span class="c1">---   ---         ---   ---</span>
 <span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w">         </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="o">-</span>
+
+<span class="err">绘制一个</span><span class="n">cantorSet</span><span class="p">(</span><span class="n">leval</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="err">相当于：</span>
+<span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="err">先绘制一条长线</span>
+<span class="mi">2</span><span class="p">.</span><span class="w"> </span><span class="err">再左右各绘制一个低一级的</span><span class="n">cantorSet</span><span class="p">(</span><span class="n">leval</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+
+<span class="w">    </span><span class="err">绘制一个</span><span class="n">cantorSet</span><span class="p">(</span><span class="n">leval</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="err">相当于</span><span class="p">......</span>
 </code></pre></div>
-<blockquote>
-<p>绘制一个cantorSet(leval 4)相当于：
-1. 先绘制一条长线
-2. 再左右各绘制一个低一级的cantorSet(leval 3)</p>
-<p>绘制一个cantorSet(leval 3) 相当于......</p>
-</blockquote>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">cantorSet</span><span class="p">(</span><span class="n">GWindow</span><span class="o">&amp;</span><span class="w"> </span><span class="n">window</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">levels</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">levels</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">pause</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w"> </span><span class="c1">// 可以看到绘制过程</span>
@@ -1404,6 +1403,10 @@ $$C(n, k) = \frac{n!}{k! \cdot (n - k)!}$$</p>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

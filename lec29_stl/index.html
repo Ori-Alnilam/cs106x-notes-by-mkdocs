@@ -46,6 +46,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -928,8 +930,8 @@
 
 
 <h1 id="lec29_stl">Lec29_STL<a class="headerlink" href="#lec29_stl" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!note]</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <h4 id="_1">迭代器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <ol>
 <li>C++的迭代器使得遍历各种容器变得统一。迭代器类似指针，重载了<code>*</code>、<code>++</code>等运算符。同时STL提供了大量基于迭代器的算法<code>include &lt;algorithm&gt;</code>：<code>for_each</code>、<code>find</code>、<code>count</code>、<code>sort</code>......</li>
@@ -940,7 +942,7 @@
 <li>C++11后引入了智能指针，可以自动管理内存，而不需要手动delete</li>
 <li><code>include &lt;memory&gt;</code>后可以使用unique_ptr等模板类</li>
 </ul>
-</blockquote>
+</div>
 
 
 
@@ -993,6 +995,10 @@
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

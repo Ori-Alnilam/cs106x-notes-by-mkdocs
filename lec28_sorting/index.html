@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -966,15 +968,17 @@
 
 
 <h1 id="lec28_sorting">Lec28_Sorting<a class="headerlink" href="#lec28_sorting" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!note]
-- bogo sort
-- <a href="#Selection_sort">selection sort</a>
-- <a href="#Insertion_sort">insertion sort</a>
-- <a href="#Merge_sort">merge sort</a>
-- TimSort
-- <a href="#Quick_sort">quick sort</a></p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>bogo sort</li>
+<li><a href="#Selection_sort">selection sort</a></li>
+<li><a href="#Insertion_sort">insertion sort</a></li>
+<li><a href="#Merge_sort">merge sort</a></li>
+<li>TimSort</li>
+<li><a href="#Quick_sort">quick sort</a></li>
+</ul>
+</div>
 <h4 id="selection_sort">Selection_sort<a class="headerlink" href="#selection_sort" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">selectionSort</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1008,10 +1012,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>[!note]
-选择排序和插入排序的时间复杂度都是$O(N^2)$</p>
-</blockquote>
+<p>选择排序和插入排序的时间复杂度都是<span class="arithmatex">\(O(N^2)\)</span></p>
 <h4 id="merge_sort">Merge_sort<a class="headerlink" href="#merge_sort" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">mergeSort</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1107,11 +1108,8 @@
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="quick_sort">Quick_sort<a class="headerlink" href="#quick_sort" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>[!note]
-归并排序是稳定的排序算法，而快速排序不稳定。</p>
+<p>归并排序是稳定的排序算法，而快速排序不稳定。</p>
 <p>稳定性：相等元素的相对顺序在排序前后不变</p>
-</blockquote>
 <hr />
 
 
@@ -1165,6 +1163,10 @@
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1110,14 +1112,10 @@
 
 
 <h1 id="assignment3">Assignment3<a class="headerlink" href="#assignment3" title="Permanent link">&para;</a></h1>
-<blockquote>
 <p>作业地址：<a href="https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1224/assignments/a3/">Recursion!</a></p>
 <p>备注：作业3实际应该在学完lec10**穷举搜索**和lec11**回溯法**后再写，会轻松很多。我看完lec9就写了，写得非常痛苦</p>
-</blockquote>
 <h2 id="part-one-the-sierpinski-triangle">Part One: The Sierpinski Triangle<a class="headerlink" href="#part-one-the-sierpinski-triangle" title="Permanent link">&para;</a></h2>
-<blockquote>
 <p>谢尔宾斯基三角形。</p>
-</blockquote>
 <h4 id="_1">代码实现<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">drawSierpinskiTriangle</span><span class="p">(</span><span class="n">GWindow</span><span class="o">&amp;</span><span class="w"> </span><span class="n">window</span><span class="p">,</span>
 <span class="w">                            </span><span class="kt">double</span><span class="w"> </span><span class="n">x0</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y0</span><span class="p">,</span>
@@ -1138,13 +1136,10 @@
 <h4 id="_2">结果展示<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <p><img alt="ass3-1" src="../images/ass3-1.png" /></p>
 <h2 id="part-two-human-pyramids">Part Two: Human Pyramids<a class="headerlink" href="#part-two-human-pyramids" title="Permanent link">&para;</a></h2>
-<blockquote>
 <p>人类金字塔。
 1. memoization</p>
-</blockquote>
 <p><img alt="ass3-2" src="../images/ass3-2.png" /></p>
 <h4 id="_3">代码实现<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<blockquote>
 <p>不愿意代码里出现多个<code>160</code>，所以声明了一个全局常量。（在静态局部变量和全局常量中选择了全局常量，虽说容易污染全局变量空间什么的，但我还是觉得这样可读性和后续修改起来更好一点）
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;HumanPyramids.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hashmap.h&quot;</span>
@@ -1182,17 +1177,14 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
-</blockquote>
 <h4 id="_4">结果展示<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <p><img alt="ass3-3" src="../images/ass3-3.png" /></p>
 <h2 id="part-three-what-are-you-doing">Part Three: What Are YOU Doing?<a class="headerlink" href="#part-three-what-are-you-doing" title="Permanent link">&para;</a></h2>
-<blockquote>
 <p>这题可以参考一下课上讲的练习题<code>evaluate</code>：变量index</p>
 <ol>
 <li>每次递归到终止条件得到一种可能结果currentResult</li>
 <li>所有currentResult加起来的集合results，就是所有可能的强调情况</li>
 </ol>
-</blockquote>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cctype&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;strlib.h&quot;</span>
 <span class="p">...</span>
@@ -1230,10 +1222,8 @@
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="part-four-shift-scheduling">Part Four: Shift Scheduling<a class="headerlink" href="#part-four-shift-scheduling" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>lengthOf()返回班次的工作时长，valueOf()返回班次带来的价值、overlapsWith()比较两个班次是否冲突</p>
+<p>lengthOf() 返回班次的工作时长，valueOf() 返回班次带来的价值、overlapsWith() 比较两个班次是否冲突</p>
 <p>lec11课堂练习<code>sublists</code>和这题类似</p>
-</blockquote>
 <p><div class="highlight"><pre><span></span><code><span class="n">思路</span><span class="err">：</span>
 
 <span class="c1">// 递归终止条件</span>
@@ -1326,11 +1316,9 @@
 懒得写测试用例了_ (:з」∠)_</p>
 <h4 id="_6">结果展示<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p><img alt="ass3-4" src="../images/ass3-4.png" /></p>
-<blockquote>
 <p>恭喜完成Assignment 3！</p>
 <p>这次作业是目前耗时最久最难的一次，Part 1、2还比较容易，到Part 3就需要好好思考了，Part 4更是尝试了好久好久。</p>
 <p><del>应该还可以优化，我累了</del></p>
-</blockquote>
 <hr />
 
 
@@ -1384,6 +1372,10 @@
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1023,8 +1025,8 @@
 </ul>
 </li>
 <li>字符串长度<code>s.length()</code>或<code>s.size()</code><ul>
-<li>标准库实现在<code>std::string</code> 内部维护一个成员变量来记录字符串的长度，每次调用 <code>length()</code> 时只需返回这个已保存的值，不需要遍历整个字符串。时间复杂度为$O(1)$。多次调用也几乎没有额外开销。</li>
-<li>[!] 这与C中常用的<code>string.h</code>库中的<code>strlen()</code>不同，<code>strlen()</code> 必须遍历字符数组，查找终止的 <code>\0</code> 来计算字符串的长度，时间复杂度为$O(n)$。如果在循环中频繁调用可能会带来较高的开销。</li>
+<li>标准库实现在<code>std::string</code> 内部维护一个成员变量来记录字符串的长度，每次调用 <code>length()</code> 时只需返回这个已保存的值，不需要遍历整个字符串。时间复杂度为<span class="arithmatex">\(O(1)\)</span>。多次调用也几乎没有额外开销。</li>
+<li>[!] 这与C中常用的<code>string.h</code>库中的<code>strlen()</code>不同，<code>strlen()</code> 必须遍历字符数组，查找终止的 <code>\0</code> 来计算字符串的长度，时间复杂度为<span class="arithmatex">\(O(n)\)</span>。如果在循环中频繁调用可能会带来较高的开销。</li>
 </ul>
 </li>
 <li>
@@ -1055,16 +1057,24 @@ C++标准库中还有一个很相似的函数<code>getline()</code>：
 <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// 输入：David Malan</span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 输出：Hello, David Malan</span>
 </code></pre></div>
-它接受两个参数：从哪读取、存到哪去。没有返回值（说明name是作为引用参数传递的）
-- <a href="https://codestepbystep.com/r/problem/view/cpp/strings/nameDiamond">nameDiamond</a>
-- <strong>C string 和 C++ String</strong>
-    - C中的string是字符数组<code>char*</code>，没有C++ String中的成员函数可以使用
-    - 当在程序中直接写"Hello", "world"时，是C String
-    - 当<code>string s = "Hello";</code>时，会转化为C++ String
-    - 一个容易出错的例子：<code>string s = "Hello " + "world";</code>
-    - 右边"Hello "和"world"都是C String，并不能像C++ String一样通过"+"直接连接。不过编译器也不会报错，实际会进行指针运算，让两个地址相加后赋值给变量s，导致预期外的内存操作，造成程序崩溃。
-    - <img alt="lec3-3" src="../images/lec3-3.png" />
-    - 可以通过<code>string("hi")</code>转换为C++ string，两个string中只要有一个string是C++ string，用"+"连接时会自动转换为C++ string</p>
+它接受两个参数：从哪读取、存到哪去。没有返回值（说明name是作为引用参数传递的）</p>
+<ul>
+<li>
+<p><a href="https://codestepbystep.com/r/problem/view/cpp/strings/nameDiamond">nameDiamond</a></p>
+</li>
+<li>
+<p><strong>C string 和 C++ String</strong></p>
+<ul>
+<li>C中的string是字符数组<code>char*</code>，没有C++ String中的成员函数可以使用</li>
+<li>当在程序中直接写"Hello", "world"时，是C String</li>
+<li>当<code>string s = "Hello";</code>时，会转化为C++ String</li>
+<li>一个容易出错的例子：<code>string s = "Hello " + "world";</code></li>
+<li>右边"Hello "和"world"都是C String，并不能像C++ String一样通过"+"直接连接。不过编译器也不会报错，实际会进行指针运算，让两个地址相加后赋值给变量s，导致预期外的内存操作，造成程序崩溃。
+<img alt="lec3-3" src="../images/lec3-3.png" /></li>
+<li>可以通过<code>string("hi")</code>转换为C++ string，两个string中只要有一个string是C++ string，用"+"连接时会自动转换为C++ string</li>
+</ul>
+</li>
+</ul>
 <h4 id="_1">遍历字符串<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <ol>
 <li><code>[]</code>访问下标</li>
@@ -1104,7 +1114,7 @@ C++标准库中还有一个很相似的函数<code>getline()</code>：
 <ol>
 <li><strong>sstream字符串流</strong></li>
 </ol>
-<p>**istringstream**将字符串当作输入流从中读取数据。常用于解析字符串中的数据
+<p><strong>istringstream</strong> 将字符串当作输入流从中读取数据。常用于解析字符串中的数据
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 <span class="p">...</span>
@@ -1115,7 +1125,7 @@ C++标准库中还有一个很相似的函数<code>getline()</code>：
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;This is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
 <span class="c1">// This is CS50x 2025</span>
 </code></pre></div>
-**ostringstream**输出流，它允许你将数据写入字符串（实际上是一种高效构建、累计字符串的方式），而不是直接写到控制台或者文件。这使得它非常适合于字符串拼接、格式化或者缓存数据以便后续使用。<code>&lt;&lt;</code>运算符将数据写入流，通过<code>str()</code>方法获取生成的字符串。
+<strong>ostringstream</strong> 输出流，它允许你将数据写入字符串（实际上是一种高效构建、累计字符串的方式），而不是直接写到控制台或者文件。这使得它非常适合于字符串拼接、格式化或者缓存数据以便后续使用。<code>&lt;&lt;</code>运算符将数据写入流，通过<code>str()</code>方法获取生成的字符串。
 <div class="highlight"><pre><span></span><code><span class="n">ostringstream</span><span class="w"> </span><span class="n">output</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2025</span><span class="p">;</span>
 <span class="n">output</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;This is CS50x &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">year</span><span class="p">;</span><span class="w"> </span><span class="c1">// 将数据写入流</span>
@@ -1194,6 +1204,10 @@ If the code wont't modify the grid, also pass it as <strong>const</strong></p>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

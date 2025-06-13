@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1050,9 +1052,7 @@
 
 
 <h1 id="assignment2">Assignment2<a class="headerlink" href="#assignment2" title="Permanent link">&para;</a></h1>
-<blockquote>
 <p>Fun with Collections</p>
-</blockquote>
 <h2 id="part1-rosetta-stone">Part1: Rosetta Stone<a class="headerlink" href="#part1-rosetta-stone" title="Permanent link">&para;</a></h2>
 <h3 id="milestone-one-form-k-grams">Milestone One: Form k-Grams<a class="headerlink" href="#milestone-one-form-k-grams" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">kGramsIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">kGramLength</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1073,15 +1073,13 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="milestone-two-normalize-frequencies">Milestone Two: Normalize Frequencies<a class="headerlink" href="#milestone-two-normalize-frequencies" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>要求：kGrams -&gt; nGrams <strong>归一化</strong>，或者说是**向量的单位化**：将**频率向量**转换为**单位向量**，使得向量的长度（模）为1。</p>
+<p>要求：kGrams -&gt; nGrams <strong>归一化</strong> ，或者说是 <strong>向量的单位化</strong> ：将 <strong>频率向量</strong> 转换为 <strong>单位向量</strong> ，使得向量的长度（模）为1。</p>
 <ol>
-<li><strong>计算频率向量的平方和</strong>：$S = \sum_{} f_i^2​$</li>
-<li><strong>计算归一化因子</strong>：$\sqrt{S}$</li>
-<li><strong>归一化每个频率</strong>：将每个频率除以$\sqrt{S}$就可以了</li>
+<li><strong>计算频率向量的平方和</strong> ：<span class="arithmatex">\(S = \sum_{} f_i^2​\)</span></li>
+<li><strong>计算归一化因子</strong> ：<span class="arithmatex">\(\sqrt{S}\)</span></li>
+<li><strong>归一化每个频率</strong> ：将每个频率除以<span class="arithmatex">\(\sqrt{S}\)</span>就可以了</li>
 </ol>
 <p>注意：判断平方和是否为0时，直接<code>if (sum == 0.0)</code>测试无法通过，虽然不知道为什么全为0平方和的情况下也有浮点数不精确（应该是这个问题？）布尔语句改成<code>sum &lt; 1</code>或者<code>sum &lt; 1e-9</code>都可以。</p>
-</blockquote>
 <div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">normalize</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Map is empty!&quot;</span><span class="p">);</span>
@@ -1105,7 +1103,6 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="milestone-three-filter-out-uncommon-trigrams">Milestone Three: Filter Out Uncommon Trigrams<a class="headerlink" href="#milestone-three-filter-out-uncommon-trigrams" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p>要求：kGrams -&gt; hGrams 得出最频繁的numToKeep个kGrams</p>
 <p>用到了优先队列，查文档后再写<a href="http://www.martinstepp.com/cppdoc/PriorityQueue-class.html">PriorityQueue</a>
 <div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">topKGramsIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numToKeep</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1136,17 +1133,15 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">hGrams</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
-</blockquote>
 <h3 id="milestone-four-implement-cosine-similarity">Milestone Four: Implement Cosine Similarity<a class="headerlink" href="#milestone-four-implement-cosine-similarity" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p>要求：找到两个nGrams的交集后，计算频率乘积的总和，即为余弦相似度。</p>
-<p>思想：输入两个nGrams（记为$P_1$、$P_2$），$P_1$、$P_2$是已经**归一化**的kGram频率分布，它们的频率向量是单位向量。通过计算两个向量的点积（内积），得到它们的夹角余弦值，用于衡量相似性。</p>
+<p>思想：输入两个nGrams（记为<span class="arithmatex">\(P_1\)</span>、<span class="arithmatex">\(P_2\)</span>），<span class="arithmatex">\(P_1\)</span>、<span class="arithmatex">\(P_2\)</span>是已经 <strong>归一化</strong> 的kGram频率分布，它们的频率向量是单位向量。通过计算两个向量的点积（内积），得到它们的夹角余弦值，用于衡量相似性。</p>
 <ol>
-<li><strong>找到共有的 kgram</strong>：找到$P_1$、$P_2$中共有的kgram <em>(即Map中key相同的键值对)</em></li>
-<li><strong>计算点积</strong>：对于每个共有的kgram，将它们在$P_1$、$P_2$中的频率对应相乘，后求和：$\sum_{} P_1(\text{kgram}) \times P_2(\text{kgram})$ <em>(即key相同的键值对，将它们值对应相乘，再求和)</em></li>
+<li><strong>找到共有的 kgram</strong> ：找到<span class="arithmatex">\(P_1\)</span>、<span class="arithmatex">\(P_2\)</span>中共有的kgram <em>(即Map中key相同的键值对)</em></li>
+<li><strong>计算点积</strong> ：对于每个共有的kgram，将它们在<span class="arithmatex">\(P_1\)</span>、<span class="arithmatex">\(P_2\)</span>中的频率对应相乘，后求和：<span class="arithmatex">\(\sum_{} P_1(\text{kgram}) \times P_2(\text{kgram})\)</span> <em>(即key相同的键值对，将它们值对应相乘，再求和)</em></li>
 </ol>
-<p>公式：$\text{余弦相似度} = \cos(\theta) = \frac{\mathbf{P_1} \cdot \mathbf{P_2}}{|\mathbf{P_1}| \cdot |\mathbf{P_2}|}$
-由于$P_1$、$P_2$都是已经归一化的单位向量，简化为$\cos(\theta) = P_1 \cdot P_2$
+<p>公式：<span class="arithmatex">\(\text{余弦相似度} = \cos(\theta) = \frac{\mathbf{P_1} \cdot \mathbf{P_2}}{\|\mathbf{P_1}\| \cdot \|\mathbf{P_2}\|}\)</span>
+由于<span class="arithmatex">\(P_1\)</span>、<span class="arithmatex">\(P_2\)</span>都是已经归一化的单位向量，简化为<span class="arithmatex">\(\cos(\theta) = P_1 \cdot P_2\)</span>
 <div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">cosineSimilarityOf</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">ngram</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">lhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1157,11 +1152,9 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
-</blockquote>
 <h3 id="milestone-five-guess-a-texts-language">Milestone Five: Guess a Text’s Language<a class="headerlink" href="#milestone-five-guess-a-texts-language" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>遍历语料库，将当前语言Profile($P_1$)与语料库中的每一种语言Profile($P_2$)都计算余弦相似度*(上一步已实现)*
-把similarity作为优先级将language放进优先队列，dequeue到只剩下最后一种similarity值最大的language就是目标语言
+<p>遍历语料库，将当前语言 Profile(<span class="arithmatex">\(P_1\)</span>) 与语料库中的每一种语言 Profile(<span class="arithmatex">\(P_2\)</span>) 都计算余弦相似度 <em>(上一步已实现)</em> </p>
+<p>把 similarity 作为优先级将 language 放进优先队列, dequeue 到只剩下最后一种 similarity 值最大的 language 就是目标语言
 <div class="highlight"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="nf">guessLanguageOf</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">textProfile</span><span class="p">,</span>
 <span class="w">                       </span><span class="k">const</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Corpus</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">corpora</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pq</span><span class="p">;</span>
@@ -1177,17 +1170,15 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pq</span><span class="p">.</span><span class="n">dequeue</span><span class="p">();</span>
 <span class="p">}</span><span class="err">##</span>
 </code></pre></div></p>
-</blockquote>
 <p><img alt="ass2-1" src="../images/ass2-1.png" /></p>
 <p>接下来，测试我们的代码是否能正确识别语言</p>
 <h3 id="milestone-six-explore-and-evaluate">Milestone Six: Explore and Evaluate<a class="headerlink" href="#milestone-six-explore-and-evaluate" title="Permanent link">&para;</a></h3>
 <p><img alt="ass2-2" src="../images/ass2-2.png" />
 <img alt="ass2-3" src="../images/ass2-3.png" />
-<img alt="ass2-4" src="../images/ass2-4.png" />
-1-10是正确识别的例子，11-14是无法准确识别的例子。提出测试工具可靠性的方法（这部分跳过）</p>
+<img alt="ass2-4" src="../images/ass2-4.png" /></p>
+<p>1-10是正确识别的例子，11-14是无法准确识别的例子。提出测试工具可靠性的方法（这部分跳过）</p>
 <p>至此，Part1结束。</p>
 <h2 id="part-2-rising-tides">Part 2: Rising Tides<a class="headerlink" href="#part-2-rising-tides" title="Permanent link">&para;</a></h2>
-<blockquote>
 <ol>
 <li>
 <p>用到了bfs，有点像之前写的岛屿问题。</p>
@@ -1235,7 +1226,6 @@
 </li>
 </ol>
 <p>就把代码贴上来，好歹做点笔记啊喂！完全不管复习时候的自己的死活是吧Orz</p>
-</blockquote>
 <p><img alt="ass2-5" src="../images/ass2-5.png" />
 恭喜完成Assignment2，耶( •̀ ω •́ )y</p>
 <hr />
@@ -1291,6 +1281,10 @@
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
