@@ -58,7 +58,7 @@
 	- 字面值(如123，"abc")可以作为值参数传递，但不能作为引用参数传递。只能将变量作为引用参数，因为实际传入的引用是变量在内存中的地址。
 		- 如`void func(int a)`，调用时可以func(123)；
 		- 但`void func(int& a);`，~~func(123)~~是不合法的。正确调用应先将整数存进变量中`int n = 123;`，再将变量作为函数参数传递`func(n)`
-	- 例子：上述图片中的`void datingRange(int age, int& min, int& max)`。age是值语义，调用时可以直接用"48"`datingRange(48, young, old)`，也可以先`int a = 48`，再将变量a传入`datingRange(a, young, old)`；但min和max是引用语义，必须将变量作为参数，~~datingRange(48, 0, 0)~~调用是不合法的。
+	- 例子：上述图片中的`void datingRange(int age, int& min, int& max)`。age是值语义，调用时可以直接用"48"`datingRange(48, young, old)`，也可以先`int a = 48`，再将变量a传入`datingRange(a, young, old)`；但min和max是引用语义，必须将变量作为参数，,<del>datingRange(48, 0, 0)</del>调用是不合法的。
 - 课程结束前的最后一个例子，计算方程的根（假设有两个根）
 	- [?] 请思考函数的返回值、函数应该接受的参数、以及参数是按值还是按引用传递
 	- [x] 3个按值传递的参数a、b、c，两个按引用传递的参数x1、x2（通过引用传递一次“返回”两个值），函数不需要返回值`void`。
